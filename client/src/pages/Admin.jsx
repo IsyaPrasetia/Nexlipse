@@ -52,7 +52,7 @@ export default function Admin() {
             <div style={{ minHeight: '100vh', display: 'grid', placeItems: 'center', padding: '80px 20px 0' }}>
                 <form onSubmit={login} style={{ width: '100%', maxWidth: 380, background: 'var(--card)', border: '1px solid var(--card-border)', borderRadius: 18, padding: 30 }}>
                     <h2 style={{ marginBottom: 4 }}>Admin <span style={{ color: 'var(--accent)' }}>Nexlipse</span></h2>
-                    <p style={{ color: 'var(--text-mute)', fontSize: '.85rem', marginBottom: 20 }}>Akses terbatas — halaman ini tidak ditautkan dari situs publik.</p>
+                    <p style={{ color: 'var(--text-mute)', fontSize: '.85rem', marginBottom: 20 }}>Akses terbatas. Halaman ini tidak ditautkan dari situs publik.</p>
                     <div className="field">
                         <label>Password</label>
                         <input type="password" value={pw} onChange={(e) => setPw(e.target.value)} autoFocus />
