@@ -34,6 +34,11 @@ function getAdminUser() {
 
 const AUTH_TOKENS = new Map();
 
+(() => {
+    const u = readJson(ADMIN_FILE, null);
+    if (u && u.token) AUTH_TOKENS.set(u.token, u.token);
+})();
+
 function requireAdmin(req, res, next) {
     const token = (req.headers.authorization || '').replace(/^Bearer\s+/i, '');
     const u = getAdminUser();
