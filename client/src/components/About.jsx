@@ -10,7 +10,15 @@ export default function About({ profile, about }) {
             </div>
             <div className="about-grid">
                 <div className="reveal">
-                    <p className="about-bio lead">{profile.name}</p>
+                    <div className="about-person reveal-card">
+                        <div className="about-avatar">
+                            {profile.avatar ? <img src={profile.avatar} alt={profile.name} /> : (profile.name || 'M').charAt(0)}
+                        </div>
+                        <div>
+                            <p className="about-bio lead">{profile.name}</p>
+                            <span className="role-chip">{profile.role}</span>
+                        </div>
+                    </div>
                     <p className="about-bio">{about.bio}</p>
                     <p className="skills-label">Tech stack yang sering dipakai:</p>
                     <div className="skills-chips">

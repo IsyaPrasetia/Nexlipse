@@ -54,7 +54,7 @@ export default function Hero({ profile, about }) {
                 <div className="hero-card reveal-card" ref={cardRef}>
                     <span className="card-shine" aria-hidden />
                     <div className="avatar brand-avatar">
-                        {profile.brand ? profile.brand.charAt(0) : 'N'}
+                        <img src="/nexlipse.svg" alt={profile.brand} />
                         <span className="online-pip" />
                     </div>
                     <h3>{profile.brand}</h3>
