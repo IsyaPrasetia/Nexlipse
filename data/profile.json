@@ -17,7 +17,7 @@
     { "name": "React + Vite", "level": 85 },
     { "name": "Backend & REST API", "level": 88 },
     { "name": "C++ / Python", "level": 75 },
-    { "name": "Pemrograman PHP", "level": 70 },
+    { "name": "Laravel / PHP", "level": 70 },
     { "name": "Server Lokal & Otomasi", "level": 90 }
   ],
   "services": [
