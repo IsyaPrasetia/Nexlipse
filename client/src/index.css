@@ -1,40 +1,40 @@
 :root {
   --font-sans: "Segoe UI", system-ui, -apple-system, sans-serif;
-  --bg: #f4f6fb;
+  --bg: #f7f5f1;
   --bg-soft: #ffffff;
   --card: #ffffff;
-  --card-border: rgba(15, 23, 42, 0.08);
-  --text: #0f172a;
-  --text-soft: #475569;
-  --text-mute: #94a3b8;
-  --accent: #0ea5e9;
-  --accent-2: #6366f1;
-  --accent-3: #22d3ee;
-  --grad: linear-gradient(135deg, #0ea5e9, #6366f1, #22d3ee);
-  --glow: rgba(14, 165, 233, 0.35);
-  --chip: rgba(15, 23, 42, 0.05);
-  --nav: rgba(244, 246, 251, 0.82);
-  --shadow: 0 10px 40px -12px rgba(15, 23, 42, 0.15);
-  --danger: #ef4444;
-  --success: #10b981;
+  --card-border: rgba(28, 25, 21, 0.08);
+  --text: #201d18;
+  --text-soft: #5d574d;
+  --text-mute: #a09888;
+  --accent: #9b7a3f;
+  --accent-2: #6f5a2e;
+  --accent-3: #c9a86a;
+  --grad: linear-gradient(135deg, #9b7a3f, #6f5a2e);
+  --glow: rgba(155, 122, 63, 0.28);
+  --chip: rgba(28, 25, 21, 0.05);
+  --nav: rgba(247, 245, 241, 0.85);
+  --shadow: 0 10px 40px -12px rgba(64, 46, 20, 0.16);
+  --danger: #c0564f;
+  --success: #6f9c7e;
 }
 
 [data-theme="dark"] {
-  --bg: #070b14;
-  --bg-soft: #0b1220;
-  --card: #0e1626;
-  --card-border: rgba(148, 163, 184, 0.12);
-  --text: #e2e8f0;
-  --text-soft: #94a3b8;
-  --text-mute: #64748b;
-  --accent: #38bdf8;
-  --accent-2: #818cf8;
-  --accent-3: #22d3ee;
-  --grad: linear-gradient(135deg, #38bdf8, #818cf8, #22d3ee);
-  --glow: rgba(56, 189, 248, 0.30);
-  --chip: rgba(148, 163, 184, 0.12);
-  --nav: rgba(7, 11, 20, 0.82);
-  --shadow: 0 10px 40px -12px rgba(0, 0, 0, 0.6);
+  --bg: #0d0d0f;
+  --bg-soft: #121215;
+  --card: #151518;
+  --card-border: rgba(235, 232, 225, 0.09);
+  --text: #ede9e1;
+  --text-soft: #a8a299;
+  --text-mute: #716b62;
+  --accent: #d3ab67;
+  --accent-2: #bf8a55;
+  --accent-3: #e5cb96;
+  --grad: linear-gradient(135deg, #d3ab67, #bf8a55);
+  --glow: rgba(211, 171, 103, 0.26);
+  --chip: rgba(235, 232, 225, 0.08);
+  --nav: rgba(13, 13, 15, 0.85);
+  --shadow: 0 10px 40px -12px rgba(0, 0, 0, 0.65);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -51,11 +51,11 @@ body {
 
 /* ============ AMBIENT FX (subtle) ============ */
 .orbs { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
-.orb { position: absolute; border-radius: 50%; filter: blur(90px); opacity: .16; will-change: transform; }
-[data-theme="dark"] .orb { opacity: .12; }
-.orb-a { width: 420px; height: 420px; background: #0ea5e9; top: -140px; right: -100px; animation: drift 26s ease-in-out infinite; }
-.orb-b { width: 360px; height: 360px; background: #6366f1; bottom: -120px; left: -120px; animation: drift 32s ease-in-out infinite reverse; }
-.orb-c { width: 280px; height: 280px; background: #22d3ee; top: 45%; left: 62%; animation: drift 38s ease-in-out infinite; }
+.orb { position: absolute; border-radius: 50%; filter: blur(90px); opacity: .13; will-change: transform; }
+[data-theme="dark"] .orb { opacity: .10; }
+.orb-a { width: 420px; height: 420px; background: #d3ab67; top: -140px; right: -100px; animation: drift 26s ease-in-out infinite; }
+.orb-b { width: 360px; height: 360px; background: #c97f5a; bottom: -120px; left: -120px; animation: drift 32s ease-in-out infinite reverse; }
+.orb-c { width: 280px; height: 280px; background: #8a9ba8; top: 45%; left: 62%; animation: drift 38s ease-in-out infinite; }
 @keyframes drift {
   0%, 100% { transform: translate(0, 0) scale(1); }
   33% { transform: translate(28px, -18px) scale(1.05); }

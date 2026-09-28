@@ -9,7 +9,7 @@ export default function Hero({ profile, about }) {
     const motivasi = useCountUp(365);
     const cardRef = useRef(null);
     useTilt(cardRef, 7);
-    const roles = profile.roles && profile.roles.length ? profile.roles : ['Fullstack Developer', 'Mini Server Owner', 'WA Bot Maker'];
+    const roles = profile.roles && profile.roles.length ? profile.roles : ['Fullstack Developer', 'Mini Server Enthusiast', 'WA Bot Maker'];
     const typed = useTypewriter(roles);
 
     return (
