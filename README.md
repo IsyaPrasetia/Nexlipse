@@ -33,9 +33,9 @@ Login di `#/admin` (tidak ada tombol di halaman publik):
 Password admin disimpan sebagai hash scrypt di `data/admin-user.json` (gitignored).
 Atur pertama kali via env `ADMIN_PASSWORD` saat start.
 
-## Notifikasi WA
-Form kontak → tersimpan ke `data/messages.json` → jika `contacts.waNotify` aktif,
-dikirim ke nomor target lewat bridge **AI-CS** (`POST /send` di port 5591, slot admin1).
+## Kontak
+- Form kontak → tersimpan ke `data/messages.json`
+- Tombol WhatsApp langsung ke `wa.me/<profile.whatsapp>` (format internasional, mis. `6285959667602`)
 
 ## Lisensi
 MIT © Nexlipse
