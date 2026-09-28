@@ -11,7 +11,42 @@ const ADMIN_FILE = path.join(DATA, 'admin-user.json');
 const MSG_FILE = path.join(DATA, 'messages.json');
 
 const app = express();
-app.use(express.json({ limit: '5mb' }));
+app.disable('x-powered-by');
+app.use(express.json({ limit: '2mb' }));
+app.use('/api/admin/login', express.json({ limit: '16kb' }));
+
+// ================= SECURITY HEADERS =================
+app.use((req, res, next) => {
+    res.setHeader('X-Content-Type-Options', 'nosniff');
+    res.setHeader('X-Frame-Options', 'DENY');
+    res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+    res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
+    res.setHeader('X-XSS-Protection', '0');
+    res.setHeader('Content-Security-Policy',
+        "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; " +
+        "font-src 'self' data:; script-src 'self'; connect-src 'self' https:; frame-ancestors 'none'; " +
+        "base-uri 'self'; form-action 'self'"
+    );
+    if (req.secure || req.headers['x-forwarded-proto'] === 'https') {
+        res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+    }
+    next();
+});
+
+// ================= RATE LIMIT (per IP) =================
+const rateBuckets = new Map();
+function rateLimit(max, windowMs, message) {
+    return (req, res, next) => {
+        const ip = req.headers['x-forwarded-for'] ? String(req.headers['x-forwarded-for']).split(',')[0].trim() : req.ip;
+        const now = Date.now();
+        const b = rateBuckets.get(ip) || { t: now, n: 0 };
+        if (now - b.t > windowMs) { b.t = now; b.n = 0; }
+        b.n++;
+        rateBuckets.set(ip, b);
+        if (b.n > max) return res.status(429).json({ error: message || 'Terlalu banyak permintaan. Coba lagi nanti.' });
+        next();
+    };
+}
 
 function readJson(file, fallback) {
     try { return JSON.parse(fs.readFileSync(file, 'utf8')); } catch { return fallback; }
@@ -57,14 +92,16 @@ app.get('/api/contacts-config', (req, res) => {
 });
 
 // ================= CONTACT FORM =================
-app.post('/api/contact', async (req, res) => {
+app.post('/api/contact', rateLimit(10, 60 * 1000, 'Terlalu banyak pesan. Coba lagi beberapa saat.'), async (req, res) => {
     const { name, email, message } = req.body || {};
     if (!name || !message) return res.status(400).json({ error: 'Nama dan pesan wajib diisi.' });
     if (String(message).length > 4000) return res.status(400).json({ error: 'Pesan terlalu panjang.' });
+    const emailStr = String(email || '').trim();
+    if (emailStr && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailStr)) return res.status(400).json({ error: 'Format email tidak valid.' });
     const entry = {
         ts: Date.now(),
         name: String(name).slice(0, 120),
-        email: String(email || '').slice(0, 200),
+        email: emailStr.slice(0, 200),
         message: String(message).slice(0, 4000)
     };
     const list = readJson(MSG_FILE, []);
@@ -76,7 +113,7 @@ app.post('/api/contact', async (req, res) => {
 });
 
 // ================= ADMIN API =================
-app.post('/api/admin/login', (req, res) => {
+app.post('/api/admin/login', rateLimit(5, 10 * 60 * 1000, 'Terlalu banyak percobaan login. Coba lagi 10 menit lagi.'), (req, res) => {
     const { password } = req.body || {};
     const u = getAdminUser();
     if (!u.passHash) return res.status(400).json({ error: 'Password admin belum diatur. Set env ADMIN_PASSWORD lalu restart server.' });

@@ -1,0 +1,8 @@
+# Security contact for nexlipse.my.id
+# This is the security.txt (RFC 9116) file.
+
+Contact: mailto:nexlipse.id@google.com
+Preferred-Languages: id, en
+Canonical: https://nexlipse.my.id/.well-known/security.txt
+Policy: https://nexlipse.my.id/security.txt
+Expires: 2027-01-01T00:00:00.000Z
