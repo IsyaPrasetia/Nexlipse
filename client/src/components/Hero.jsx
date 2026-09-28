@@ -1,26 +1,38 @@
 import { useRef } from 'react';
-import { useCountUp, useTypewriter, useTilt } from '../hooks';
+import { useCountUp, useTypewriter, useTilt, useParallax, useMagnet } from '../hooks';
 
 const ICONS = { instagram: '📸', facebook: '👤', youtube: '▶️', github: '⌨️', tiktok: '🎵', linkedin: '🔗' };
+
+function Magnetic({ children, className }) {
+    const ref = useRef(null);
+    useMagnet(ref);
+    return <span ref={ref} className={`magnet ${className || ''}`}>{children}</span>;
+}
+
+function ShimmerLine({ children }) {
+    return <span className="word-shimmer">{children}</span>;
+}
 
 export default function Hero({ profile, about }) {
     const proyek = useCountUp(11);
     const runtime = useCountUp(24);
     const motivasi = useCountUp(365);
     const cardRef = useRef(null);
+    const copyRef = useRef(null);
     useTilt(cardRef, 7);
+    useParallax(copyRef, 0.12);
     const roles = profile.roles && profile.roles.length ? profile.roles : ['Fullstack Developer Enthusiast', 'WA Bot Maker'];
     const typed = useTypewriter(roles);
 
     return (
         <section className="hero" id="beranda">
             <div className="hero-grid">
-                <div className="hero-copy">
+                <div className="hero-copy" ref={copyRef}>
                     <span className="hero-tag reveal-up"><span className="dot" /> Tersedia untuk kolaborasi</span>
                     <h1 className="reveal-up" style={{ transitionDelay: '90ms' }}>
-                        Bangun <span className="grad-text">{profile.brand}</span>,
+                        Bangun <ShimmerLine>{profile.brand}</ShimmerLine>,
                         <br />
-                        dari <span className="grad-text">Koding</span> sampai <span className="grad-text">Server</span>.
+                        dari <ShimmerLine>Koding</ShimmerLine> sampai <ShimmerLine>Server</ShimmerLine>.
                     </h1>
                     <p className="type-wrap reveal-up" style={{ transitionDelay: '180ms' }}>
                         <span className="type-badge">{typed}<span className="caret" /></span>
@@ -30,8 +42,8 @@ export default function Hero({ profile, about }) {
                         {profile.shortBio}
                     </p>
                     <div className="hero-actions reveal-up" style={{ transitionDelay: '360ms' }}>
-                        <a href="#project" className="btn btn-primary">Lihat Project →</a>
-                        <a href="#kontak" className="btn btn-ghost">Mulai Bisnis Anda</a>
+                        <Magnetic><a href="#project" className="btn btn-primary">Lihat Project →</a></Magnetic>
+                        <Magnetic><a href="#kontak" className="btn btn-ghost">Mulai Bisnis Anda</a></Magnetic>
                     </div>
                     <div className="hero-stats reveal-up" style={{ transitionDelay: '420ms' }}>
                         <div className="stat"><b>{proyek}+</b><span>Proyek di-Live</span></div>

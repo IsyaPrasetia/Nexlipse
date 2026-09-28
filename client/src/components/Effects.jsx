@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useScrollProgress, useMouseGlow } from '../hooks';
 
 export function ScrollProgress() {
@@ -18,6 +18,31 @@ export function CursorGlow() {
     if (!enabled) return null;
     return (
         <div className="cursor-glow" style={{ left: x, top: y }} aria-hidden />
+    );
+}
+
+export function Dust() {
+    const dots = useMemo(() =>
+        Array.from({ length: 14 }, () => ({
+            left: Math.random() * 100,
+            top: Math.random() * 100,
+            size: 2 + Math.random() * 3,
+            dur: 14 + Math.random() * 18,
+            delay: -Math.random() * 30
+        })), []);
+    return (
+        <div className="dust" aria-hidden>
+            {dots.map((d, i) => (
+                <span key={i} className="dust-dot" style={{
+                    left: `${d.left}%`,
+                    top: `${d.top}%`,
+                    width: d.size,
+                    height: d.size,
+                    animationDuration: `${d.dur}s`,
+                    animationDelay: `${d.delay}s`
+                }} />
+            ))}
+        </div>
     );
 }
 

@@ -10,7 +10,7 @@ import Experience from './components/Experience.jsx';
 import About from './components/About.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
-import { ScrollProgress, CursorGlow, AmbientOrbs, BackToTop } from './components/Effects.jsx';
+import { ScrollProgress, CursorGlow, AmbientOrbs, Dust, BackToTop } from './components/Effects.jsx';
 import Admin from './pages/Admin.jsx';
 
 export default function App() {
@@ -49,6 +49,7 @@ export default function App() {
     return (
         <>
             <AmbientOrbs />
+            <Dust />
             <ScrollProgress />
             <CursorGlow />
             <Navbar profile={data.profile} />

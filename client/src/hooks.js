@@ -115,3 +115,60 @@ export function useTilt(ref, max = 8) {
         };
     }, [ref, max]);
 }
+
+export function useParallax(ref, strength = 0.18) {
+    useEffect(() => {
+        const el = ref.current;
+        if (!el) return;
+        let raf;
+        const update = () => {
+            cancelAnimationFrame(raf);
+            raf = requestAnimationFrame(() => {
+                const r = el.getBoundingClientRect();
+                const mid = (r.top + r.height / 2) - window.innerHeight / 2;
+                const y = -mid * (strength / 100);
+                el.style.transform = `translate3d(0, ${y.toFixed(1)}px, 0)`;
+            });
+        };
+        window.addEventListener('scroll', update, { passive: true });
+        window.addEventListener('resize', update);
+        update();
+        return () => {
+            window.removeEventListener('scroll', update);
+            window.removeEventListener('resize', update);
+            cancelAnimationFrame(raf);
+        };
+    }, [ref, strength]);
+}
+
+export function useMagnet(ref, radius = 40) {
+    useEffect(() => {
+        const el = ref.current;
+        if (!el) return;
+        let raf;
+        const onMove = (e) => {
+            if (window.matchMedia('(pointer: coarse)').matches) return;
+            const r = el.getBoundingClientRect();
+            const dx = e.clientX - (r.left + r.width / 2);
+            const dy = e.clientY - (r.top + r.height / 2);
+            const d = Math.hypot(dx, dy);
+            if (d > radius) return;
+            const pull = 1 - d / radius;
+            cancelAnimationFrame(raf);
+            raf = requestAnimationFrame(() => {
+                el.style.transform = `translate(${dx * 0.25 * pull}px, ${dy * 0.25 * pull}px)`;
+            });
+        };
+        const onLeave = () => {
+            cancelAnimationFrame(raf);
+            el.style.transform = 'translate(0,0)';
+        };
+        el.addEventListener('mousemove', onMove);
+        el.addEventListener('mouseleave', onLeave);
+        return () => {
+            el.removeEventListener('mousemove', onMove);
+            el.removeEventListener('mouseleave', onLeave);
+            cancelAnimationFrame(raf);
+        };
+    }, [ref, radius]);
+}
