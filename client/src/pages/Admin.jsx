@@ -24,7 +24,6 @@ export default function Admin() {
         if (!token) return;
         admin.get('/admin/verify').catch(() => { setToken(''); try { localStorage.removeItem(TOKEN_KEY); } catch {} });
         load(section);
-        admin.get('/admin/status').then(setStatus).catch(() => {});
     }, [token]);
 
     function load(s) {
@@ -51,7 +50,6 @@ export default function Admin() {
             await admin.put(`/admin/${section}`, parsed);
             setDoc(parsed);
             setSaved('Tersimpan ✓');
-            if (section === 'contacts') admin.get('/admin/status').then(setStatus).catch(() => {});
         } catch (ex) { setErr(ex instanceof SyntaxError ? 'JSON tidak valid: ' + ex.message : ex.message); }
         finally { setSaving(false); }
     };
@@ -93,16 +91,8 @@ export default function Admin() {
                 ))}
             </div>
 
-            {status && (
-                <div style={{ display: 'flex', gap: 24, alignItems: 'center', marginBottom: 14, color: 'var(--text-soft)', fontSize: '.92rem', flexWrap: 'wrap' }}>
-                    <span>📨 Kontak masuk: <b style={{ color: 'var(--accent)' }}>{status.messages}</b></span>
-                    <span>Notif WA: <b style={{ color: status.waNotify ? 'var(--success)' : 'var(--danger)' }}>{status.waNotify ? 'Aktif' : 'Mati'}</b></span>
-                    <span>Tujuan WA: <b>{status.notifyTarget || '-'}</b></span>
-                </div>
-            )}
-
             <p style={{ fontSize: '.82rem', color: 'var(--text-mute)', marginBottom: 10 }}>
-                Tab <b>contacts</b>: set target WA (mis. 62812xxx) + on/off notifikasi. Tab lain: edit JSON lalu Simpan — langsung aktif tanpa restart.
+                Tab <b>contacts</b>: atur teks balasan otomatis kontak form. Tab lain: edit JSON lalu Simpan — langsung aktif tanpa restart.
             </p>
             <textarea spellCheck={false} style={styles.editor} value={draft} onChange={(e) => setDraft(e.target.value)} />
 

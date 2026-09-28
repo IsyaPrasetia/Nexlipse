@@ -31,8 +31,13 @@ export default function Contact({ profile, config }) {
             <div className="contact-wrap">
                 <div className="contact-info reveal">
                     <p className="big">Ayo mulai dari <span style={{ color: 'var(--accent)' }}>{profile.brand}</span></p>
-                    <p>Kirim pesan lewat formulir, atau hubungi langsung:</p>
-                    <a className="mail" href={`mailto:${profile.email}`}>✉️ {profile.email}</a>
+                    <p>Hubungi langsung kalau mau lebih cepat:</p>
+                    {profile.whatsapp ? (
+                        <a className="btn btn-wa" href={`https://wa.me/${profile.whatsapp}`} target="_blank" rel="noopener noreferrer" style={{ marginBottom: 12 }}>
+                            💬 WhatsApp — {profile.whatsappDisplay || profile.whatsapp}
+                        </a>
+                    ) : null}
+                    <a className="mail" href={`mailto:${profile.email}`} style={{ display: 'inline-flex' }}>✉️ {profile.email}</a>
                     <p style={{ marginTop: 18 }}>{config.active ? config.autoReplyNote || '' : ''}</p>
                 </div>
                 <form className="reveal" onSubmit={submit}>

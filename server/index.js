@@ -67,15 +67,6 @@ app.post('/api/contact', async (req, res) => {
     writeJson(MSG_FILE, list);
 
     const cfg = readJson(path.join(DATA, 'contacts.json'), {});
-    if (cfg.waNotify && cfg.notifyTarget) {
-        try {
-            await require('child_process').execFile('node', [
-                path.join(ROOT, 'wa-notify.js'),
-                cfg.notifyTarget,
-                `[Nexlipse Kontak] ${entry.name} (${entry.email || '-'}): ${entry.message}`
-            ], { timeout: 15000 });
-        } catch {}
-    }
     res.json({ ok: true, thank: cfg.autoReplyNote || 'Terima kasih sudah menghubungi!' });
 });
 
@@ -95,14 +86,6 @@ app.post('/api/admin/login', (req, res) => {
 });
 
 app.get('/api/admin/verify', requireAdmin, (req, res) => res.json({ ok: true }));
-app.get('/api/admin/status', requireAdmin, (req, res) => {
-    const cfg = readJson(path.join(DATA, 'contacts.json'), {});
-    return res.json({
-        waNotify: !!cfg.waNotify,
-        notifyTarget: cfg.notifyTarget || '',
-        messages: (readJson(MSG_FILE, [])).length
-    });
-});
 
 const EDITABLE = ['profile', 'about', 'projects', 'experience', 'contacts'];
 app.get('/api/admin/:section', requireAdmin, (req, res) => {
