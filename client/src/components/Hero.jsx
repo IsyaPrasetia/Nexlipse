@@ -1,42 +1,53 @@
-import { useCountUp } from '../hooks';
+import { useRef } from 'react';
+import { useCountUp, useTypewriter, useTilt } from '../hooks';
 
-const ICONS = { rocket: '🚀', code: '💻', server: '🖥️', bot: '🤖', shield: '🛡️', heart: '💚', info: '📢', instagram: '📸', facebook: '👤', youtube: '▶️', github: '⌨️', light: '⚡' };
+const ICONS = { instagram: '📸', facebook: '👤', youtube: '▶️', github: '⌨️', tiktok: '🎵', linkedin: '🔗' };
 
 export default function Hero({ profile, about }) {
     const proyek = useCountUp(11);
     const runtime = useCountUp(24);
     const motivasi = useCountUp(365);
+    const cardRef = useRef(null);
+    useTilt(cardRef, 7);
+    const roles = profile.roles && profile.roles.length ? profile.roles : ['Fullstack Developer', 'Mini Server Owner', 'WA Bot Maker'];
+    const typed = useTypewriter(roles);
+
     return (
         <section className="hero" id="beranda">
             <div className="hero-grid">
-                <div>
-                    <span className="hero-tag"><span className="dot" /> Tersedia untuk kolaborasi</span>
-                    <h1>
-                        Membangun <span className="grad-text">{profile.brand}</span>,
+                <div className="hero-copy">
+                    <span className="hero-tag reveal-up"><span className="dot" /> Tersedia untuk kolaborasi</span>
+                    <h1 className="reveal-up" style={{ transitionDelay: '90ms' }}>
+                        Bangun <span className="grad-text">{profile.brand}</span>,
                         <br />
-                        dari Koding sampai Server.
+                        dari <span className="grad-text">Koding</span> sampai <span className="grad-text">Server</span>.
                     </h1>
-                    <p className="lead">{profile.quote || ''}</p>
-                    <p className="sub">
-                        {profile.role} — {profile.shortBio}
+                    <p className="type-wrap reveal-up" style={{ transitionDelay: '180ms' }}>
+                        <span className="type-badge">{typed}<span className="caret" /></span>
                     </p>
-                    <div className="hero-actions">
+                    <p className="lead reveal-up" style={{ transitionDelay: '240ms' }}>{profile.quote || ''}</p>
+                    <p className="sub reveal-up" style={{ transitionDelay: '300ms' }}>
+                        {profile.shortBio}
+                    </p>
+                    <div className="hero-actions reveal-up" style={{ transitionDelay: '360ms' }}>
                         <a href="#project" className="btn btn-primary">Lihat Project →</a>
-                        <a href="#kontak" className="btn btn-ghost">Hubungi Saya</a>
+                        <a href="#kontak" className="btn btn-ghost">Mulai Bisnis Anda</a>
                     </div>
-                    <div className="hero-stats">
+                    <div className="hero-stats reveal-up" style={{ transitionDelay: '420ms' }}>
                         <div className="stat"><b>{proyek}+</b><span>Proyek di-Live</span></div>
-                        <div className="stat"><b>{runtime}/7</b><span>Jam Server Aktif</span></div>
-                        <div className="stat"><b>{motivasi}°</b><span>Semangat Ngoding</span></div>
+                        <div className="stat"><b>{runtime}/7</b><span>Ready in 24 Jam</span></div>
+                        <div className="stat"><b>100%</b><span>Garansi Server Aktif</span></div>
                     </div>
                 </div>
-                <div className="hero-card">
+                <div className="hero-card reveal-card" ref={cardRef}>
+                    <span className="card-shine" aria-hidden />
                     <div className="avatar">
                         {profile.avatar ? <img src={profile.avatar} alt={profile.name} /> : (profile.name || 'N').charAt(0)}
+                        <span className="online-pip" />
                     </div>
                     <h3>{profile.name}</h3>
                     <span className="role-chip">{profile.role}</span>
-                    <div>
+                    <div style={{ width: '100%', marginTop: 6 }}>
                         {(profile.skills || []).slice(0, 4).map((s) => (
                             <div key={s.name}>
                                 <div className="skill-row" style={{ gridTemplateColumns: '1fr auto', gap: 8, marginBottom: 2 }}>
@@ -47,12 +58,13 @@ export default function Hero({ profile, about }) {
                             </div>
                         ))}
                     </div>
-                    {(about?.socials || []).filter((s) => s.url).slice(0, 3).map((s) => (
-                        <a key={s.platform} href={s.url} target="_blank" rel="noopener noreferrer"
-                            style={{ display: 'inline-flex', alignItems: 'center', gap: 6, margin: '14px 10px 0 0', fontSize: '.8rem', color: 'var(--text-soft)' }}>
-                            {ICONS[s.icon] || '🔗'} {s.handle}
-                        </a>
-                    ))}
+                    <div className="hero-socials">
+                        {(about?.socials || []).filter((s) => s.url).slice(0, 3).map((s) => (
+                            <a key={s.platform} className="social-chip" href={s.url} target="_blank" rel="noopener noreferrer">
+                                {ICONS[s.icon] || '🔗'} {s.handle}
+                            </a>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

@@ -10,6 +10,7 @@ import Experience from './components/Experience.jsx';
 import About from './components/About.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
+import { ScrollProgress, CursorGlow, AmbientOrbs, BackToTop } from './components/Effects.jsx';
 import Admin from './pages/Admin.jsx';
 
 export default function App() {
@@ -27,7 +28,6 @@ export default function App() {
     }, [loc.pathname]);
 
     useEffect(() => {
-                document.querySelectorAll('.reveal:not(.show)').forEach((el) => el.classList.add('show'));
                 const obs = new IntersectionObserver((entries) => {
                     entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('show'); obs.unobserve(en.target); } });
                 }, { threshold: 0.12 });
@@ -48,6 +48,9 @@ export default function App() {
 
     return (
         <>
+            <AmbientOrbs />
+            <ScrollProgress />
+            <CursorGlow />
             <Navbar profile={data.profile} />
             <main>
                 <Routes>
@@ -72,6 +75,7 @@ export default function App() {
                 </Routes>
             </main>
             <Footer profile={data.profile} about={data.about} />
+            <BackToTop />
         </>
     );
 }
