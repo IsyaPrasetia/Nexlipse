@@ -1,0 +1,16 @@
+{
+  "name": "nexlipse",
+  "version": "1.0.0",
+  "description": "Nexlipse - Fullstack & Mini Server Studio. Portfolio online Mohammad Isya Prasetia.",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "node server/index.js",
+    "start": "node server/index.js",
+    "build": "cd client && vite build"
+  },
+  "author": "Mohammad Isya Prasetia",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

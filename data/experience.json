@@ -1,0 +1,42 @@
+[
+  {
+    "id": "nexbot-1",
+    "role": "Founder & Developer",
+    "org": "Nexlipse — NexBot Suite",
+    "type": "project",
+    "period": "2026 — sekarang",
+    "text": "Membangun ekosistem bot WhatsApp multi-device: AI-CS layanan pelanggan & broadcast grup, AI-ADMIN crawler + laporan AI (Ollama), WA Blast massal, semua dipantau dashboard terpusat 24/7."
+  },
+  {
+    "id": "sipandai",
+    "role": "Pengembang Sistem",
+    "org": "SiPandai — Indeks Keluarga Sehat",
+    "type": "project",
+    "period": "2026",
+    "text": "Mengolah indikator kesehatan keluarga menjadi satu sistem digital yang mudah dipantau dan diperbarui."
+  },
+  {
+    "id": "sijaga",
+    "role": "Pengembang Sistem",
+    "org": "SiJaga — Pantauan Pasien",
+    "type": "project",
+    "period": "2026",
+    "text": "Sistem pantauan, kontrol, dan pengawasan pasien demi memudahkan tenaga medis memantau kondisi pasien."
+  },
+  {
+    "id": "e-kontrol",
+    "role": "Backend Developer",
+    "org": "E-Kontrol",
+    "type": "project",
+    "period": "2026",
+    "text": "Aplikasi kontrol & monitoring berbasis PHP sebagai eksplorasi backend di luar ekosistem Node.js."
+  },
+  {
+    "id": "univ",
+    "role": "Mahasiswa Ilmu Komputer",
+    "org": "Universitas Yatsi Madani",
+    "type": "education",
+    "period": "Semester 5",
+    "text": "Belajar dasar pemrograman (C++ → Python), struktur data, hingga rekayasa perangkat lunak — diterapkan langsung lewat proyek riil Nexlipse."
+  }
+]

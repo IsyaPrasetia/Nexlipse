@@ -1,0 +1,27 @@
+{
+  "brand": "Nexlipse",
+  "tagline": "Fullstack & Mini Server Studio",
+  "name": "Mohammad Isya Prasetia",
+  "role": "Fullstack Developer & Server Engineer",
+  "shortBio": "Bangun aplikasi end-to-end — dari frontend interaktif, backend API, sampai mini server lokal yang jalan 24/7.",
+  "quote": "Dari skala kecil, dibangun yang besar.",
+  "email": "nexlipse.id@google.com",
+  "domain": "nexlipse.my.id",
+  "location": "Indonesia",
+  "avatar": "",
+  "github": "https://github.com/IsyaPrasetia",
+  "skills": [
+    { "name": "JavaScript / Node.js", "level": 92 },
+    { "name": "React + Vite", "level": 85 },
+    { "name": "Backend & REST API", "level": 88 },
+    { "name": "C++ / Python", "level": 75 },
+    { "name": "Pemrograman PHP", "level": 70 },
+    { "name": "Server Lokal & Otomasi", "level": 90 }
+  ],
+  "services": [
+    { "icon": "code", "title": "Fullstack Web", "text": "Website, portal, dashboard, dan aplikasi web end-to-end sesuai kebutuhan bisnis." },
+    { "icon": "server", "title": "Mini Server Lokal", "text": "Setup server sendiri: bot WhatsApp, crawler, API, database, dan tunnel ke internet." },
+    { "icon": "bot", "title": "Otomasi & Bot", "text": "Bot WhatsApp multi-device: layanan pelanggan (CS), promosi massal, dan laporan otomatis." },
+    { "icon": "shield", "title": "Perawatan Infra", "text": "Monitoring, log, dan anti-gangguan untuk sistem berjalan — biar tetap stabil & aman." }
+  ]
+}
