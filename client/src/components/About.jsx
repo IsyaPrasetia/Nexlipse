@@ -1,7 +1,7 @@
 const ICONS = { rocket: '🚀', code: '💻', server: '🖥️', bot: '🤖', shield: '🛡️', heart: '💚', info: '📢', instagram: '📸', facebook: '👤', youtube: '▶️', github: '⌨️', light: '⚡' };
 
 export default function About({ profile, about }) {
-    const skills = (profile.skills || []).slice(0, 6);
+    const skills = (profile.skills || []);
     return (
         <section className="section" id="tentang">
             <div className="section-head reveal">
@@ -12,12 +12,10 @@ export default function About({ profile, about }) {
                 <div className="reveal">
                     <p className="about-bio lead">{profile.name}</p>
                     <p className="about-bio">{about.bio}</p>
-                    <div className="skills">
+                    <p className="skills-label">Tech stack yang sering dipakai:</p>
+                    <div className="skills-chips">
                         {skills.map((s) => (
-                            <div className="skill-row" key={s.name}>
-                                <b>{s.name}</b>
-                                <div className="skill-bar"><i style={{ width: s.level + '%' }} /></div>
-                            </div>
+                            <span className="skill-chip" key={s.name}>{s.name}</span>
                         ))}
                     </div>
                 </div>

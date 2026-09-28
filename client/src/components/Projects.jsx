@@ -52,7 +52,7 @@ export default function Projects({ projects }) {
             <div className="section-head reveal">
                 <span className="section-eyebrow">Portofolio</span>
                 <h2>Project Terpilih</h2>
-                <p>Produk yang bukan hanya demo — dipakai beneran oleh pengguna setiap hari.</p>
+                <p>Produk yang bukan hanya demo, dipakai beneran oleh pengguna setiap hari.</p>
             </div>
             <div className="projects-filter reveal">
                 {FILTERS.map((f) => (

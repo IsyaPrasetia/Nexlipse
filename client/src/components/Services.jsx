@@ -6,7 +6,7 @@ export default function Services({ profile }) {
             <div className="section-head reveal">
                 <span className="section-eyebrow">Layanan</span>
                 <h2>Apa yang {profile.brand} Kerjakan?</h2>
-                <p>Dari kebutuhan web hingga infrastruktur server sendiri — dikerjakan end-to-end.</p>
+                <p>Dari kebutuhan web hingga infrastruktur server sendiri, dikerjakan end-to-end.</p>
             </div>
             <div className="services-grid">
                 {(profile.services || []).map((s, i) => (

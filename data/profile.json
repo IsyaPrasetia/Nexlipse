@@ -3,7 +3,7 @@
   "tagline": "Fullstack & Mini Server Studio",
   "name": "Mohammad Isya Prasetia",
   "role": "Fullstack Developer & Mini Server Owner",
-  "shortBio": "Bangun aplikasi end-to-end — dari frontend interaktif, backend API, sampai mini server lokal yang jalan 24/7.",
+  "shortBio": "Bangun aplikasi end-to-end. Dari frontend interaktif, backend API, sampai mini server lokal yang jalan 24/7.",
   "quote": "Dari skala kecil, dibangun yang besar.",
   "email": "nexlipse.id@google.com",
   "domain": "nexlipse.my.id",
@@ -24,6 +24,6 @@
     { "icon": "code", "title": "Fullstack Web", "text": "Website, portal, dashboard, dan aplikasi web end-to-end sesuai kebutuhan bisnis." },
     { "icon": "server", "title": "Mini Server Lokal", "text": "Setup server sendiri: bot WhatsApp, crawler, API, database, dan tunnel ke internet." },
     { "icon": "bot", "title": "Otomasi & Bot", "text": "Bot WhatsApp multi-device: layanan pelanggan (CS), promosi massal, dan laporan otomatis." },
-    { "icon": "shield", "title": "Perawatan Mini Server", "text": "Monitoring dan perawatan rutin sistem yang berjalan — biar stabil & aman, tanpa ribet." }
+    { "icon": "shield", "title": "Perawatan Mini Server", "text": "Monitoring dan perawatan rutin sistem yang berjalan, biar stabil & aman tanpa ribet." }
   ]
 }

@@ -4,7 +4,7 @@ export default function Experience({ experience }) {
             <div className="section-head reveal">
                 <span className="section-eyebrow">Perjalanan</span>
                 <h2>Experience</h2>
-                <p>Dari ruang kelas sampai server produksi — setiap langkah membentuk siapa sekarang.</p>
+                <p>Dari ruang kelas sampai server produksi, setiap langkah membentuk siapa sekarang.</p>
             </div>
             <div className="timeline">
                 {experience.map((e) => (

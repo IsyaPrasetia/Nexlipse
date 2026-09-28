@@ -213,8 +213,15 @@ button { font-family: inherit; cursor: pointer; }
 .social-chip:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
 .hero-card h3 { font-size: 1.25rem; }
 .hero-card .role-chip { display: inline-block; margin: 6px 0 12px; font-size: .82rem; color: var(--accent); font-weight: 600; }
-.hero-card .bar { height: 6px; border-radius: 999px; background: var(--chip); margin: 10px 0; overflow: hidden; }
-.hero-card .bar i { display: block; height: 100%; border-radius: 999px; background: var(--grad); }
+.hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.skill-chip {
+  padding: 7px 14px; border-radius: 999px; background: var(--chip);
+  border: 1px solid var(--card-border); font-size: .8rem; color: var(--text-soft);
+  transition: .2s;
+}
+.skill-chip:hover { border-color: var(--accent); color: var(--accent); }
+.skills-label { margin-top: 22px; font-size: .9rem; color: var(--text-mute); }
+.skills-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
 
 /* ============ SECTION ============ */
 .section { max-width: 1120px; margin: 0 auto; padding: 92px 20px; }

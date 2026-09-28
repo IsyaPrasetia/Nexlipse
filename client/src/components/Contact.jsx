@@ -34,7 +34,7 @@ export default function Contact({ profile, config }) {
                     <p>Hubungi langsung kalau mau lebih cepat:</p>
                     {profile.whatsapp ? (
                         <a className="btn btn-wa" href={`https://wa.me/${profile.whatsapp}`} target="_blank" rel="noopener noreferrer" style={{ marginBottom: 12 }}>
-                            💬 WhatsApp — {profile.whatsappDisplay || profile.whatsapp}
+                            💬 WhatsApp, {profile.whatsappDisplay || profile.whatsapp}
                         </a>
                     ) : null}
                     <a className="mail" href={`mailto:${profile.email}`} style={{ display: 'inline-flex' }}>✉️ {profile.email}</a>

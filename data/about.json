@@ -1,10 +1,10 @@
 {
-  "bio": "Mahasiswa Ilmu Komputer Universitas Yatsi Madani, semester 5. Di balik Nexlipse: membangun solusi fullstack dan mini server yang nyata dipakai banyak orang — dari bot WhatsApp yang melayani ribuan peserta webinar sampai dashboard pemantau sistem 24/7.",
+  "bio": "Mahasiswa Ilmu Komputer Universitas Yatsi Madani, semester 5. Di balik Nexlipse: membangun solusi fullstack dan mini server yang nyata dipakai banyak orang, dari bot WhatsApp yang melayani ribuan peserta webinar sampai dashboard pemantau sistem 24/7.",
   "highlights": [
     { "icon": "rocket", "title": "Fullstack", "text": "Frontend sampai backend, satu alur kerja end-to-end." },
     { "icon": "server", "title": "Mini Server", "text": "Rakit, rawat, dan operasikan server pribadi yang stabil & aman." },
     { "icon": "bot", "title": "Otomasi", "text": "Ciptakan bot dan sistem yang menghemat ribuan jam kerja manual." },
-    { "icon": "heart", "title": "Dampak Nyata", "text": "Setiap proyek dipakai beneran — bukan sekadar demo." }
+    { "icon": "heart", "title": "Dampak Nyata", "text": "Setiap proyek dipakai beneran, bukan sekadar demo." }
   ],
   "socials": [
     { "platform": "Instagram", "handle": "@isya_prasetia", "url": "https://instagram.com/isya_prasetia", "icon": "instagram" },

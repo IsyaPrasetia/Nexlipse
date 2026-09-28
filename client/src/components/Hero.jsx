@@ -47,16 +47,12 @@ export default function Hero({ profile, about }) {
                     </div>
                     <h3>{profile.name}</h3>
                     <span className="role-chip">{profile.role}</span>
-                    <div style={{ width: '100%', marginTop: 6 }}>
-                        {(profile.skills || []).slice(0, 4).map((s) => (
-                            <div key={s.name}>
-                                <div className="skill-row" style={{ gridTemplateColumns: '1fr auto', gap: 8, marginBottom: 2 }}>
-                                    <b style={{ fontSize: '.82rem' }}>{s.name}</b>
-                                    <span style={{ fontSize: '.75rem', color: 'var(--text-mute)' }}>{s.level}%</span>
-                                </div>
-                                <div className="bar"><i style={{ width: s.level + '%' }} /></div>
-                            </div>
-                        ))}
+                    <div style={{ width: '100%', marginTop: 8 }}>
+                        <div className="hero-chips">
+                            {(profile.skills || []).slice(0, 5).map((s) => (
+                                <span className="skill-chip" key={s.name}>{s.name}</span>
+                            ))}
+                        </div>
                     </div>
                     <div className="hero-socials">
                         {(about?.socials || []).filter((s) => s.url).slice(0, 3).map((s) => (
