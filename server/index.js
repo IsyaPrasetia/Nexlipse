@@ -100,6 +100,7 @@ app.put('/api/admin/:section', requireAdmin, (req, res) => {
     if (s === 'contacts') {
         const cur = readJson(path.join(DATA, 'contacts.json'), {});
         const next = req.body || {};
+        cur.active = !!next.active;
         cur.waNotify = !!next.waNotify;
         cur.notifyTarget = String(next.notifyTarget || '').trim();
         if (next.autoReplyNote !== undefined) cur.autoReplyNote = String(next.autoReplyNote).slice(0, 500);
