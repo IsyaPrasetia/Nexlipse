@@ -223,12 +223,23 @@ button { font-family: inherit; cursor: pointer; }
   background: var(--grad); display: grid; place-items: center; font-size: 3rem; font-weight: 900; color: #fff;
   overflow: visible;
 }
+.hero-card .brand-avatar { font-size: 3.4rem; }
 .hero-card .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 22px; }
 .online-pip {
   position: absolute; right: -4px; bottom: -4px; width: 22px; height: 22px; border-radius: 50%;
   background: var(--success); border: 3px solid var(--card);
   box-shadow: 0 0 12px var(--success); animation: pulse 2.4s infinite;
 }
+.card-divider { height: 1px; background: var(--card-border); margin: 16px 0 14px; width: 100%; }
+.card-person { display: flex; align-items: center; gap: 12px; width: 100%; }
+.person-avatar {
+  width: 42px; height: 42px; border-radius: 12px; flex-shrink: 0;
+  background: var(--chip); border: 1px solid var(--card-border);
+  display: grid; place-items: center; font-weight: 700; color: var(--text-soft); overflow: hidden;
+}
+.person-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.card-person b { display: block; font-size: .95rem; }
+.person-role { display: block; font-size: .78rem; color: var(--text-mute); margin-top: 2px; }
 .hero-socials { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
 .social-chip {
   display: inline-flex; align-items: center; gap: 5px; padding: 7px 13px; border-radius: 999px;

@@ -30,9 +30,9 @@ export default function Hero({ profile, about }) {
                 <div className="hero-copy" ref={copyRef}>
                     <span className="hero-tag reveal-up"><span className="dot" /> Tersedia untuk kolaborasi</span>
                     <h1 className="reveal-up" style={{ transitionDelay: '90ms' }}>
-                        Bangun <ShimmerLine>{profile.brand}</ShimmerLine>,
+                        <ShimmerLine>{profile.brand}</ShimmerLine> bangun solusi digital
                         <br />
-                        dari <ShimmerLine>Koding</ShimmerLine> sampai <ShimmerLine>Server</ShimmerLine>.
+                        dari <ShimmerLine>koding</ShimmerLine> sampai <ShimmerLine>server</ShimmerLine>.
                     </h1>
                     <p className="type-wrap reveal-up" style={{ transitionDelay: '180ms' }}>
                         <span className="type-badge">{typed}<span className="caret" /></span>
@@ -53,18 +53,26 @@ export default function Hero({ profile, about }) {
                 </div>
                 <div className="hero-card reveal-card" ref={cardRef}>
                     <span className="card-shine" aria-hidden />
-                    <div className="avatar">
-                        {profile.avatar ? <img src={profile.avatar} alt={profile.name} /> : (profile.name || 'N').charAt(0)}
+                    <div className="avatar brand-avatar">
+                        {profile.brand ? profile.brand.charAt(0) : 'N'}
                         <span className="online-pip" />
                     </div>
-                    <h3>{profile.name}</h3>
-                    <span className="role-chip">{profile.role}</span>
+                    <h3>{profile.brand}</h3>
+                    <span className="role-chip">{profile.tagline}</span>
                     <div style={{ width: '100%', marginTop: 8 }}>
                         <div className="hero-chips">
                             {(profile.skills || []).slice(0, 5).map((s) => (
                                 <span className="skill-chip" key={s.name}>{s.name}</span>
                             ))}
                         </div>
+                    </div>
+                    <div className="card-divider" />
+                    <div className="card-person">
+                        <span className="person-avatar">{profile.avatar ? <img src={profile.avatar} alt={profile.name} /> : (profile.name || 'N').charAt(0)}</span>
+                        <span>
+                            <b>{profile.name}</b>
+                            <span className="person-role">{profile.role} · <a href="#tentang" style={{ color: 'var(--accent)' }}>kenalan →</a></span>
+                        </span>
                     </div>
                     <div className="hero-socials">
                         {(about?.socials || []).filter((s) => s.url).slice(0, 3).map((s) => (
