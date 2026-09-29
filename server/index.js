@@ -90,13 +90,14 @@ function escHtml(s) {
 async function notifyNewMessage(entry) {
     if (!mailer) return false;
     const stamp = new Date(entry.ts).toLocaleString('id-ID', { timeZone: 'Asia/Jakarta' });
-    const rows = [
+    const fields = [
         ['Nama', entry.name],
         ['Email', entry.email],
         ['Kebutuhan', entry.kebutuhan || '-'],
         ['Preferensi kontak', entry.preferensi || '-'],
         ['Waktu', stamp]
-    ].map(([k, v]) => `<tr><td style="padding:6px 12px;border-bottom:1px solid #eee;color:#666;width:150px">${escHtml(k)}</td><td style="padding:6px 12px;border-bottom:1px solid #eee">${escHtml(v)}</td></tr>`).join('');
+    ];
+    const rows = fields.map(([k, v]) => `<tr><td style="padding:6px 12px;border-bottom:1px solid #eee;color:#666;width:150px">${escHtml(k)}</td><td style="padding:6px 12px;border-bottom:1px solid #eee">${escHtml(v)}</td></tr>`).join('');
 
     try {
         await mailer.sendMail({
@@ -106,7 +107,7 @@ async function notifyNewMessage(entry) {
             text: [
                 'Ada pesan baru di formulir kontak Nexlipse.',
                 '',
-                ...rows.map(([k, v]) => `${k}: ${v}`),
+                ...fields.map(([k, v]) => `${k}: ${v}`),
                 '',
                 `Pesan:\n${entry.message}`,
                 '',
