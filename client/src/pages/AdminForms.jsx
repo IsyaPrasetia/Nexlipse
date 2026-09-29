@@ -148,7 +148,6 @@ export function ProfileForm({ admin }) {
                     </div>
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
                         <TField label="URL foto/avatar" value={d.avatar} onChange={(v) => setDoc({ ...d, avatar: v })} hint="Kosongkan untuk pakai inisial." />
-                        <TField label="URL GitHub" value={d.github} onChange={(v) => setDoc({ ...d, github: v })} />
                     </div>
 
                     <SmallHead>Skill (persentase)</SmallHead>
@@ -272,12 +271,13 @@ export function ProjectsForm({ admin }) {
                             <TField label="Deskripsi panjang" textarea rows={3} value={p.long} onChange={(v) => setDoc(d.map((x, xi) => xi === i ? { ...x, long: v } : x))} />
                             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
                                 <TField label="Tags (dipisah koma)" value={(p.tags || []).join(', ')} onChange={(v) => setDoc(d.map((x, xi) => xi === i ? { ...x, tags: v.split(',').map((t) => t.trim()).filter(Boolean) } : x))} />
-                                <TField label="URL repo GitHub" value={p.repo} onChange={(v) => setDoc(d.map((x, xi) => xi === i ? { ...x, repo: v } : x))} />
+                                <TField label="URL website (opsional)" value={p.link} onChange={(v) => setDoc(d.map((x, xi) => xi === i ? { ...x, link: v } : x))} hint="Kosongkan kalau belum ada situs publik." />
                             </div>
+                            <TField label="Teks link (opsional)" value={p.linkLabel} onChange={(v) => setDoc(d.map((x, xi) => xi === i ? { ...x, linkLabel: v } : x))} hint="Kosongkan untuk otomatis pakai domain, contoh: sipandai.org" />
                             <Toggle label="Unggulan (featured)" checked={p.featured} onChange={(v) => setDoc(d.map((x, xi) => xi === i ? { ...x, featured: v } : x))} />
                         </ItemCard>
                     ))}
-                    <AddBtn label="+ Tambah project" onClick={() => setDoc([...d, { id: slug('project'), title: '', category: 'web', status: 'done', year: new Date().getFullYear(), short: '', long: '', tags: [], repo: '', featured: false }])} />
+                    <AddBtn label="+ Tambah project" onClick={() => setDoc([...d, { id: slug('project'), title: '', category: 'web', status: 'done', year: new Date().getFullYear(), short: '', long: '', tags: [], link: '', linkLabel: '', featured: false }])} />
                 </>
             )}
         </SectionForm>

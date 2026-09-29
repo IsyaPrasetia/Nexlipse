@@ -7,8 +7,16 @@
     "year": 2026,
     "short": "Platform kontrol bot WhatsApp (Baileys) multi-device terpusat dengan dashboard.",
     "long": "Ekosistem bot WhatsApp yang lengkap: AI-CS (auto-reply layanan pelanggan + broadcast grup multi-admin), AI-ADMIN (crawler website & PDF + laporan berbasis AI/Ollama), WA Blast massal, plus dashboard kontrol yang memantau semua proses secara real-time.",
-    "tags": ["Node.js", "Baileys", "React", "Express", "PM2", "Ollama"],
-    "repo": "https://github.com/IsyaPrasetia/Nexbot",
+    "tags": [
+      "Node.js",
+      "Baileys",
+      "React",
+      "Express",
+      "PM2",
+      "Ollama"
+    ],
+    "link": "",
+    "linkLabel": "",
     "featured": true
   },
   {
@@ -19,8 +27,14 @@
     "year": 2026,
     "short": "Customer service WhatsApp otomatis dengan handover human multi-admin.",
     "long": "Bot CS yang menjawab pertanyaan peserta webinar otomatis, membalas DM, broadcast promosi ke seluruh grup, dan menyerahkan percakapan ke admin manusia saat dibutuhkan. Tiga admin dengan peran berbeda (customer service, bulk, reply-only) yang bisa dilacak status live.",
-    "tags": ["Baileys", "Node.js", "NeDB", "Multi-device"],
-    "repo": "https://github.com/IsyaPrasetia/Nexbot",
+    "tags": [
+      "Baileys",
+      "Node.js",
+      "NeDB",
+      "Multi-device"
+    ],
+    "link": "",
+    "linkLabel": "",
     "featured": true
   },
   {
@@ -31,8 +45,15 @@
     "year": 2026,
     "short": "Crawler website + PDF yang merangkum jadi laporan AI.",
     "long": "Bot yang mengambil data dari website dan PDF, lalu menghasilkan laporan otomatis berbantuan model lokal (Ollama). Menghemat jam kerja manual untuk verifikasi dan pembuatan laporan berkala.",
-    "tags": ["Node.js", "Crawler", "PDF", "Ollama", "AI"],
-    "repo": "https://github.com/IsyaPrasetia/Nexbot",
+    "tags": [
+      "Node.js",
+      "Crawler",
+      "PDF",
+      "Ollama",
+      "AI"
+    ],
+    "link": "",
+    "linkLabel": "",
     "featured": false
   },
   {
@@ -43,8 +64,13 @@
     "year": 2026,
     "short": "Broadcast WhatsApp massal yang aman dari penalti rate-limit.",
     "long": "Mesin blast massal dengan antrian, jeda cerdas antar pesan, retry otomatis untuk pesan yang gagal, dan indikator hidup/mati setiap slot. Dipakai untuk promosi webinar ke puluhan grup sekaligus.",
-    "tags": ["Baileys", "Node.js", "Antrian"],
-    "repo": "https://github.com/IsyaPrasetia/Nexbot",
+    "tags": [
+      "Baileys",
+      "Node.js",
+      "Antrian"
+    ],
+    "link": "",
+    "linkLabel": "",
     "featured": false
   },
   {
@@ -55,8 +81,12 @@
     "year": 2026,
     "short": "Sistem kontrol & monitoring berbasis PHP.",
     "long": "Aplikasi web untuk kontrol dan monitoring, membuktikan kemampuan backend alternatif di luar ekosistem JavaScript/Node.",
-    "tags": ["PHP", "Web"],
-    "repo": "https://github.com/IsyaPrasetia/E-Kontrol",
+    "tags": [
+      "PHP",
+      "Web"
+    ],
+    "link": "",
+    "linkLabel": "",
     "featured": false
   },
   {
@@ -67,8 +97,12 @@
     "year": 2026,
     "short": "Program Indonesia Sehat, Pendekatan Keluarga.",
     "long": "Aplikasi pendukung Program Indonesia Sehat dengan Pendekatan Keluarga, berbasis JavaScript.",
-    "tags": ["JavaScript", "Web"],
-    "repo": "https://github.com/IsyaPrasetia/PIS-PK",
+    "tags": [
+      "JavaScript",
+      "Web"
+    ],
+    "link": "",
+    "linkLabel": "",
     "featured": false
   },
   {
@@ -79,8 +113,13 @@
     "year": 2026,
     "short": "Indeks Keluarga Sehat, diolah menjadi pemantauan kesehatan keluarga.",
     "long": "Proyek terbaru: Sistem Pandai Keluarga (Indeks Keluarga Sehat) yang mengumpulkan, mengolah, dan menyajikan indikator kesehatan keluarga secara digital agar mudah dipantau.",
-    "tags": ["Web", "Data", "Kesehatan"],
-    "repo": "",
+    "tags": [
+      "Web",
+      "Data",
+      "Kesehatan"
+    ],
+    "link": "https://sipandai.org",
+    "linkLabel": "sipandai.org",
     "featured": true
   },
   {
@@ -91,8 +130,13 @@
     "year": 2026,
     "short": "Pantauan, kontrol, dan pengawas pasien.",
     "long": "Proyek terbaru: sistem Jaga untuk pantauan, kontrol, dan pengawasan pasien. Membantu tenaga medis memantau kondisi pasien lebih mudah.",
-    "tags": ["Web", "Monitoring", "Kesehatan"],
-    "repo": "",
+    "tags": [
+      "Web",
+      "Monitoring",
+      "Kesehatan"
+    ],
+    "link": "https://sijaga.id",
+    "linkLabel": "sijaga.id",
     "featured": true
   },
   {
@@ -103,8 +147,12 @@
     "year": 2026,
     "short": "Dalam proses, platform keberlanjutan & lingkungan.",
     "long": "Proyek sedang berjalan: Rumah Hijau, platform yang bergerak di bidang keberlanjutan dan lingkungan.",
-    "tags": ["Web", "Lingkungan"],
-    "repo": "",
+    "tags": [
+      "Web",
+      "Lingkungan"
+    ],
+    "link": "",
+    "linkLabel": "",
     "featured": false
   },
   {
@@ -115,8 +163,11 @@
     "year": 2025,
     "short": "Perjalanan belajar C++ dari dasar di perkuliahan.",
     "long": "Catatan dan latihan pembelajaran C++, fondasi syntax yang menjadi pijakan memahami bahasa pemrograman lain.",
-    "tags": ["C++"],
-    "repo": "https://github.com/IsyaPrasetia/CPP_Coursework",
+    "tags": [
+      "C++"
+    ],
+    "link": "",
+    "linkLabel": "",
     "featured": false
   },
   {
@@ -127,8 +178,41 @@
     "year": 2025,
     "short": "Pembelajaran Python semester baru, berjalan terus.",
     "long": "Lanjutan belajar pemrograman Python setelah C++, masih sederhana dan terus dikembangkan.",
-    "tags": ["Python"],
-    "repo": "https://github.com/IsyaPrasetia/Python_Coursework",
+    "tags": [
+      "Python"
+    ],
+    "link": "",
+    "linkLabel": "",
     "featured": false
+  },
+  {
+    "id": "pondok-sehat-indonesia",
+    "title": "Pondok Sehat Indonesia",
+    "category": "web",
+    "status": "done",
+    "year": 2026,
+    "short": "Website Pondok Sehat Indonesia untuk pelayanan sertifikasi tingkat internasional.",
+    "long": "Proyek pembuatan dan pengembangan website Pondok Sehat Indonesia yang melayani pelayanan sertifikasi dengan tingkat internasional.",
+    "tags": [
+      "Laravel/PHP"
+    ],
+    "link": "https://pondoksehatindonesia.org",
+    "linkLabel": "pondoksehatindonesia.org",
+    "featured": true
+  },
+  {
+    "id": "arteria-medika-profesional",
+    "title": "Arteria Medika Profesional",
+    "category": "web",
+    "status": "done",
+    "year": 2026,
+    "short": "Website Arteria Medika Profesional untuk pelayanan sertifikasi tingkat nasional.",
+    "long": "Proyek pembuatan dan pengembangan website Arteria Medika Profesional yang melayani pelayanan sertifikasi dengan tingkat nasional.",
+    "tags": [
+      "Laravel/PHP"
+    ],
+    "link": "https://arteriamedpro.id",
+    "linkLabel": "arteriamedpro.id",
+    "featured": true
   }
 ]

@@ -10,7 +10,6 @@
     { "platform": "Instagram", "handle": "@isya_prasetia", "url": "https://instagram.com/isya_prasetia", "icon": "instagram" },
     { "platform": "Facebook", "handle": "@isya_prasetia", "url": "https://facebook.com/isya_prasetia", "icon": "facebook" },
     { "platform": "YouTube Gaming", "handle": "@yarateee", "url": "https://youtube.com/@yarateee", "icon": "youtube" },
-    { "platform": "Channel Informasi", "handle": "@techtalkingID", "url": "https://youtube.com/@techtalkingID", "icon": "info" },
-    { "platform": "GitHub", "handle": "IsyaPrasetia", "url": "https://github.com/IsyaPrasetia", "icon": "github" }
+    { "platform": "Channel Informasi", "handle": "@techtalkingID", "url": "https://youtube.com/@techtalkingID", "icon": "info" }
   ]
 }

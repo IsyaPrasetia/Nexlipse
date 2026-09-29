@@ -16,6 +16,10 @@ function ProjectCard({ p, i }) {
     const ref = useRef(null);
     useTilt(ref, 6);
     const st = STATUS[p.status] || STATUS.done;
+    // Label link: pakai linkLabel, kalau kosong turunkan otomatis dari URL
+    // (buang protocol + garis miring) supaya tetap tampil ringkas seperti
+    // "sipandai.org" dan tidak perlu diisi manual tiap tambah project.
+    const label = (p.linkLabel || '').trim() || p.link.replace(/^https?:\/\//, '').replace(/\/+$/, '');
     return (
         <article className="project-card reveal" style={{ transitionDelay: `${(i % 3) * 60}ms` }}
             ref={ref} onMouseEnter={(e) => e.currentTarget.classList.add('hovered')}
@@ -31,7 +35,7 @@ function ProjectCard({ p, i }) {
                 <p>{p.short}</p>
                 <div className="project-tags">{(p.tags || []).map((t) => <span className="tag" key={t}>{t}</span>)}</div>
                 <div className="project-links">
-                    {p.repo ? <a href={p.repo} target="_blank" rel="noopener noreferrer">GitHub ↗</a> : null}
+                    {p.link ? <a href={p.link} target="_blank" rel="noopener noreferrer">{label} ↗</a> : null}
                     {p.status === 'progress' ? <span style={{ fontSize: '.82rem', color: '#f59e0b' }}>Sedang dikerjakan…</span> : p.status === 'latest' ? <span style={{ fontSize: '.82rem', color: 'var(--accent)' }}>Proyek saat ini</span> : null}
                 </div>
             </div>
@@ -64,7 +68,7 @@ export default function Projects({ projects }) {
             <div className="projects-grid">
                 {list.map((p, i) => <ProjectCard key={p.id} p={p} i={i} />)}
             </div>
-            <p className="yearly">Lainnya bisa dilihat di <a href="https://github.com/IsyaPrasetia" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)', fontWeight: 600 }}>github.com/IsyaPrasetia</a></p>
+            <p className="yearly">Project lain sedang dikerjakan. Hubungi langsung untuk nayadou ataukolaborasi.</p>
         </section>
     );
 }
