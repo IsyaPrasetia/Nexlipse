@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { api } from '../api';
 
 export default function Contact({ profile, config }) {
-    const EMPTY = { name: '', email: '', message: '', kebutuhan: '', budget: '', deadline: '', preferensi: 'WhatsApp' };
+    const EMPTY = { name: '', email: '', message: '', kebutuhan: '', preferensi: 'WhatsApp' };
     const [form, setForm] = useState(EMPTY);
     const [sending, setSending] = useState(false);
     const [msg, setMsg] = useState('');
@@ -27,7 +27,7 @@ export default function Contact({ profile, config }) {
             <div className="section-head reveal">
                 <span className="section-eyebrow">Kontak</span>
                 <h2>Mari Bicara Kebutuhan Anda</h2>
-                <p>Butuh website, bot, atau setup server sendiri? Ceritakan kebutuhan Anda beserta estimasi anggarannya.</p>
+                <p>Butuh website, bot, atau setup server sendiri? Ceritakan kebutuhan Anda, nanti saya bantu pilihkan yang paling pas.</p>
             </div>
             <div className="contact-wrap">
                 <div className="contact-info reveal">
@@ -64,21 +64,6 @@ export default function Contact({ profile, config }) {
                             <option>Setup dan perawatan mini server</option>
                             <option>Belum yakin, butuh konsultasi</option>
                         </select>
-                    </div>
-                    <div className="field">
-                        <label htmlFor="c-budget">Estimasi Budget</label>
-                        <select id="c-budget" value={form.budget} onChange={set('budget')}>
-                            <option value="">Pilih rentang</option>
-                            <option>Di bawah 1 juta</option>
-                            <option>1 - 3 juta</option>
-                            <option>3 - 7 juta</option>
-                            <option>Di atas 7 juta</option>
-                            <option>Belum ada anggaran</option>
-                        </select>
-                    </div>
-                    <div className="field">
-                        <label htmlFor="c-deadline">Deadline</label>
-                        <input id="c-deadline" value={form.deadline} onChange={set('deadline')} placeholder="Contoh: 2 minggu dari sekarang" />
                     </div>
                     <div className="field">
                         <label>Preferensi Kontak *</label>

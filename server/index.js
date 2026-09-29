@@ -100,7 +100,7 @@ app.get('/api/contacts-config', (req, res) => {
 
 // ================= CONTACT FORM =================
 app.post('/api/contact', rateLimit(10, 60 * 1000, 'Terlalu banyak pesan. Coba lagi beberapa saat.'), async (req, res) => {
-    const { name, email, message, kebutuhan, budget, deadline, preferensi } = req.body || {};
+    const { name, email, message, kebutuhan, preferensi } = req.body || {};
     if (!name || !message) return res.status(400).json({ error: 'Nama dan pesan wajib diisi.' });
     if (String(message).length > 4000) return res.status(400).json({ error: 'Pesan terlalu panjang.' });
     const emailStr = String(email || '').trim();
@@ -111,8 +111,6 @@ app.post('/api/contact', rateLimit(10, 60 * 1000, 'Terlalu banyak pesan. Coba la
         name: String(name).slice(0, 120),
         email: emailStr.slice(0, 200),
         kebutuhan: String(kebutuhan || '').slice(0, 120),
-        budget: String(budget || '').slice(0, 60),
-        deadline: String(deadline || '').slice(0, 120),
         preferensi: String(preferensi || '').slice(0, 40),
         message: String(message).slice(0, 4000)
     };
