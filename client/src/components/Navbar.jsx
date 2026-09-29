@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext.jsx';
 
 const SECTIONS = [
     { id: 'beranda', label: 'Beranda' },
+    { id: 'layanan', label: 'Layanan' },
     { id: 'project', label: 'Project' },
     { id: 'experience', label: 'Experience' },
     { id: 'tentang', label: 'Tentang' },
@@ -14,6 +15,8 @@ export default function Navbar({ profile }) {
     const { theme, toggle } = useTheme();
     const [open, setOpen] = useState(false);
     const [active, setActive] = useState('beranda');
+    const loc = useLocation();
+    const nav = useNavigate();
 
     useEffect(() => {
         const obs = new IntersectionObserver((entries) => {
@@ -26,6 +29,10 @@ export default function Navbar({ profile }) {
     const go = (e, id) => {
         e.preventDefault();
         setOpen(false);
+        if (loc.pathname !== '/') {
+            nav(`/#${id}`);
+            return;
+        }
         document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     };
 

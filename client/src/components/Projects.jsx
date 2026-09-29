@@ -1,4 +1,5 @@
 import { useMemo, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useTilt } from '../hooks';
 
 const STATUS = { done: ['Selesai', 'status-done'], latest: ['Terbaru', 'status-latest'], progress: ['Berjalan', 'status-progress'] };
@@ -36,6 +37,7 @@ function ProjectCard({ p, i }) {
                 <div className="project-tags">{(p.tags || []).map((t) => <span className="tag" key={t}>{t}</span>)}</div>
                 <div className="project-links">
                     {p.link ? <a href={p.link} target="_blank" rel="noopener noreferrer">{label} ↗</a> : null}
+                    {p.link && <Link to={`/portfolio/${p.id}`} className="project-detail-link">Detail Project</Link>}
                     {p.status === 'progress' ? <span style={{ fontSize: '.82rem', color: '#f59e0b' }}>Sedang dikerjakan…</span> : p.status === 'latest' ? <span style={{ fontSize: '.82rem', color: 'var(--accent)' }}>Proyek saat ini</span> : null}
                 </div>
             </div>

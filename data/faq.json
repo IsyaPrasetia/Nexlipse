@@ -1,0 +1,24 @@
+{
+  "faq": [
+    {
+      "q": "Berapa biaya membuat website internal atau dashboard custom?",
+      "a": "Tergantung cakupan: jumlah halaman, fitur, dan kebutuhan data. Website profil yang sederhana berbeda dengan sistem lengkap berpanel admin. Ceritakan kebutuhannya, nanti dihitungkan sesuai."
+    },
+    {
+      "q": "Apakah bisa membuat bot WhatsApp sesuai alur bisnis kami?",
+      "a": "Bisa. Alur bisnis diceritakan dulu, baru bot dibangun mengikutinya: pertanyaan apa yang sering masuk, grup mana, dan kapan diserahkan ke admin manusia."
+    },
+    {
+      "q": "Apakah server bisa dirawat setelah proyek selesai?",
+      "a": "Bisa. Ada paket perawatan berkala berisi monitoring, pembaruan keamanan, backup, dan laporan supaya sistem tetap stabil tanpa Anda repot urusan teknis."
+    },
+    {
+      "q": "Berapa lama pengerjaan website custom?",
+      "a": "Website profil umumnya 1 sampai 2 minggu. Sistem dengan pendaftaran peserta, dashboard, atau panel admin biasanya 3 sampai 6 minggu tergantung kompleksitas."
+    },
+    {
+      "q": "Apa perbedaan server lokal dan hosting biasa?",
+      "a": "Server lokal berarti perangkat di lokasi Anda: data di tangan sendiri dan biaya langganan bulanan lebih hemat, tapi butuh listrik dan perawatan. Hosting biasa praktis dan cepat, namun data berada di server pihak ketiga."
+    }
+  ]
+}

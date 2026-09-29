@@ -1,0 +1,149 @@
+{
+  "pages": [
+    {
+      "slug": "website-internal",
+      "title": "Jasa Website Internal",
+      "profileTitle": "Fullstack Web",
+      "icon": "code",
+      "pageTitle": "Jasa Website Internal Custom untuk Bisnis | Nexlipse",
+      "metaDescription": "Membangun website internal custom untuk bisnis atau organisasi: profil, pendaftaran peserta, sampai pengelolaan data backend. Bukan template.",
+      "h1": "Jasa Website Internal Custom untuk Bisnis",
+      "lead": "Website resmi yang beneran dipakai setiap hari: halaman layanan, alur pendaftaran peserta, sampai pengelolaan data di backend. Dibangun custom sesuai kebutuhan, bukan sekadar template yang kelihatan bagus di layar.",
+      "features": [
+        { "title": "Halaman layanan dan persyaratan", "text": "Struktur halaman yang jelas dan mudah dibaca calon pelanggan, dari profil sampai detail layanan." },
+        { "title": "Pendaftaran peserta", "text": "Formulir pendaftaran dengan alur masuk data yang rapi, lengkap dengan status dan riwayat." },
+        { "title": "Backend pengelolaan data", "text": "Panel admin untuk kelola peserta, dokumen, dan konten tanpa perlu menyentuh kode." },
+        { "title": "Responsif di semua perangkat", "text": "Tampilan yang nyaman dibuka dari HP, tablet, maupun desktop." }
+      ],
+      "process": [
+        { "k": "Konsultasi", "v": "Ceritakan kebutuhan, alur kerja, dan siapa yang akan memakai website." },
+        { "k": "Rancang", "v": "Struktur halaman dan alur data disusun dulu sebelum menulis kode." },
+        { "k": "Bangun", "v": "Frontend, backend, dan panel admin dikerjakan sampai berfungsi." },
+        { "k": "Uji dan serah terima", "v": "Diuji dari sisi pengunjung dan admin, lalu diserahkan beserta cara pemakaiannya." }
+      ],
+      "target": "Cocok untuk usaha jasa, klinik, lembaga sertifikasi, dan organisasi yang butuh website resmi dengan data yang terkelola. Contoh nyata: Pondok Sehat Indonesia dan Arteria Medika Profesional.",
+      "cta": "Ceritakan kebutuhan website internal Anda, nanti dirancangkan sesuai alur kerjanya.",
+      "faq": [
+        { "q": "Berapa lama pengerjaan website internal?", "a": "Website profil yang sederhana biasanya 1 sampai 2 minggu. Kalau ada pendaftaran peserta dan panel admin, sekitar 3 sampai 6 minggu tergantung kompleksitas." },
+        { "q": "Apakah bisa memakai Laravel atau PHP?", "a": "Bisa. Nexlipse mengerjakan dengan JavaScript/Node.js maupun Laravel/PHP, tergantung kebutuhan perawatan jangka panjang." },
+        { "q": "Apakah website bisa dirawat setelah selesai?", "a": "Bisa, lewat paket perawatan berkala atau dukungan saat ada perubahan." }
+      ]
+    },
+    {
+      "slug": "dashboard-custom",
+      "title": "Jasa Dashboard Custom",
+      "profileTitle": "",
+      "icon": "light",
+      "pageTitle": "Jasa Dashboard Custom dan Monitoring | Nexlipse",
+      "metaDescription": "Dashboard custom sesuai alur kerja bisnis: pantauan data, laporan otomatis, dan kontrol peran pengguna. Dibangun dari data yang benar-benar dipakai.",
+      "h1": "Jasa Dashboard Custom dan Sistem Monitoring",
+      "lead": "Panel kontrol yang dibuka staf setiap hari: pantauan data, laporan otomatis, dan kontrol akses per peran. Dibangun dari alur kerja nyata bisnis Anda, bukan template.",
+      "features": [
+        { "title": "Pantauan data real-time", "text": "Angka dan status penting tampil ringkas tanpa harus buka file atau email satu per satu." },
+        { "title": "Laporan otomatis", "text": "Ringkasan berkala dibuat otomatis dari data yang masuk, menghemat jam kerja manual." },
+        { "title": "Kontrol peran pengguna", "text": "Setiap staf melihat sesuai perannya, admin punya kendali penuh atas data." },
+        { "title": "Integrasi dengan sistem lama", "text": "Dashboard bisa mengambil data dari database, spreadsheet, atau API yang sudah ada." }
+      ],
+      "process": [
+        { "k": "Petakan alur kerja", "v": "Data apa yang penting, siapa yang melihat, dan keputusan apa yang diambil." },
+        { "k": "Rancang tampilan", "v": "Layout panel dirancang ringkas, angka penting di depan." },
+        { "k": "Bangun dan sambungkan", "v": "Sumber data disambungkan dan panel dibangun sesuai rancangan." },
+        { "k": "Uji dengan data nyata", "v": "Diuji memakai data asli sampai rasanya pas untuk dipakai harian." }
+      ],
+      "target": "Untuk tim atau organisasi yang mengelola banyak data dan butuh satu tempat untuk memantau kondisi, alur kerja, atau peserta. Contoh nyata: SiJaga untuk pantauan pasien.",
+      "cta": "Punya data yang numpuk di banyak file? Ceritakan masalahnya, dashboardnya dirancangkan dari sini.",
+      "faq": [
+        { "q": "Apakah dashboard bisa dihubungkan ke sistem yang sudah ada?", "a": "Bisa. Selama data bisa diakses lewat database, file, atau API, dashboard bisa mengambil dan menyajikannya." },
+        { "q": "Berapa lama dashboard custom dikerjakan?", "a": "Tergantung jumlah sumber data dan tampilan. Dashboard sederhana sekitar 2 sampai 4 minggu." },
+        { "q": "Apakah bisa diakses dari HP?", "a": "Bisa. Dashboard dirancang responsif sehingga tetap nyaman dibuka dari perangkat apa pun." }
+      ]
+    },
+    {
+      "slug": "bot-whatsapp-otomatis",
+      "title": "Jasa Bot WhatsApp Otomatis",
+      "profileTitle": "Otomasi & Bot",
+      "icon": "bot",
+      "pageTitle": "Jasa Bot WhatsApp Otomatis untuk Bisnis | Nexlipse",
+      "metaDescription": "Bot WhatsApp multi-device untuk layanan pelanggan, broadcast, dan laporan otomatis. Angkat percakapan ke admin manusia saat dibutuhkan.",
+      "h1": "Jasa Bot WhatsApp Otomatis",
+      "lead": "Bot WhatsApp multi-device untuk layanan pelanggan, broadcast, dan laporan otomatis. Tidak perlu HP selalu online, dan bisa menyerahkan percakapan ke admin manusia saat dibutuhkan.",
+      "features": [
+        { "title": "Auto-reply layanan pelanggan", "text": "Menjawab pertanyaan umum otomatis, dari jam operasional sampai pendaftaran." },
+        { "title": "Broadcast yang aman", "text": "Pesan massal dengan antrian dan jeda cerdas supaya tidak kena penalti rate-limit." },
+        { "title": "Handover ke admin manusia", "text": "Percakapan diserahkan ke staf saat butuh jawaban personal atau keputusan." },
+        { "title": "Laporan otomatis", "text": "Ringkasan percakapan dan aktivitas dikirim berkala tanpa perlu cek manual." }
+      ],
+      "process": [
+        { "k": "Ceritakan alur", "v": "Pertanyaan apa yang sering masuk, grup mana, dan siapa adminnya." },
+        { "k": "Rancang skenario", "v": "Pola jawaban otomatis dan aturan kapan diserahkan ke manusia." },
+        { "k": "Bangun dan uji", "v": "Bot dijalankan di perangkat sendiri, diuji dengan percakapan nyata." },
+        { "k": "Pantau dan sesuaikan", "v": "Dipantau bersama, jawaban disesuaikan kalau ada pola pertanyaan baru." }
+      ],
+      "target": "Cocok untuk webinar, komunitas, dan bisnis yang menerima banyak pertanyaan lewat WhatsApp. Contoh nyata: AI-CS yang melayani ribuan peserta webinar dengan tiga admin berbeda peran.",
+      "cta": "Ceritakan alur layanan WhatsApp Anda, nanti diskusikan mana yang bisa otomatis dan mana yang tetap ditangani manusia.",
+      "faq": [
+        { "q": "Apakah bot WhatsApp aman dari blokir?", "a": "Kami memakai nomor dengan riwayat wajar, skenario pesan yang manusiawi, dan jeda antar pesan. Tetap ada risiko penalti jika memakai nomor baru untuk blast besar, jadi strategi pengiriman disesuaikan dulu." },
+        { "q": "Apakah bisa sesuai alur bisnis kami?", "a": "Bisa. Alur bisnis diceritakan dulu, lalu bot dibangun mengikuti alur itu, bukan kebalikannya." },
+        { "q": "Apakah bot bisa dijalankan tanpa HP online?", "a": "Bisa. Bot berjalan di mini server jadi tidak bergantung pada HP yang menyala terus." }
+      ]
+    },
+    {
+      "slug": "mini-server-lokal",
+      "title": "Jasa Setup Mini Server Lokal",
+      "profileTitle": "Mini Server Lokal",
+      "icon": "server",
+      "pageTitle": "Jasa Setup Mini Server Lokal | Nexlipse",
+      "metaDescription": "Setup server pribadi di lokasi Anda: bot, API, database, dan tunnel ke internet. Data tetap di tangan sendiri, biaya langganan jangka panjang ditekan.",
+      "h1": "Jasa Setup Mini Server Lokal",
+      "lead": "Server pribadi di lokasi Anda untuk menjalankan bot, API, database, dan layanan internal. Data tetap di tangan sendiri dan tersambung ke internet lewat tunnel yang aman.",
+      "features": [
+        { "title": "Rakitan perangkat", "text": "Perangkat dipilih sesuai beban kerja, dari yang hemat daya sampai yang bertenaga." },
+        { "title": "Tunnel yang aman", "text": "Layanan diakses dari internet tanpa membuka port router langsung." },
+        { "title": "Backup rutin", "text": "Data dan konfigurasi dicadangkan otomatis supaya aman dari kerusakan." },
+        { "title": "Dokumentasi jelas", "text": "Cara pakai, alamat akses, dan perawatan dicatat supaya tidak bergantung pada satu orang." }
+      ],
+      "process": [
+        { "k": "Hitung kebutuhan", "v": "Layanan apa yang dijalankan dan seberapa besar beban kerjanya." },
+        { "k": "Rakit dan pasang", "v": "Perangkat, sistem operasi, dan layanan dipasang dan dikonfigurasi." },
+        { "k": "Sambungkan ke internet", "v": "Tunnel aman dibuat supaya layanan bisa diakses dari luar tanpa ekspos IP." },
+        { "k": "Terima dan jalankan", "v": "Diuji dari akses lokal dan internet, lalu diserahkan siap pakai." }
+      ],
+      "target": "Untuk UMKM, organisasi, dan pengembang yang butuh server sendiri untuk data sensitif atau biaya langganan jangka panjang. Contoh nyata: ekosistem bot Nexlipse yang berjalan di server lokal.",
+      "cta": "Mau punya server sendiri tapi bingung mulai dari mana? Diskusikan kebutuhan dan lokasinya.",
+      "faq": [
+        { "q": "Apa perbedaan server lokal dan hosting biasa?", "a": "Server lokal berarti perangkat di lokasi Anda: data di tangan sendiri dan biaya langganan bulanan ditekan, tapi perlu listrik dan perawatan. Hosting biasa cepat dan praktis, namun data berada di server pihak ketiga." },
+        { "q": "Apakah server lokal aman diakses dari internet?", "a": "Aman kalau memakai tunnel seperti Cloudflare, karena IP rumah tidak terekspos dan koneksi terenkripsi." },
+        { "q": "Berapa lama setup-nya?", "a": "Setup dasar satu server biasanya 1 sampai 3 hari kerja, tergantung layanan yang dijalankan." }
+      ]
+    },
+    {
+      "slug": "maintenance-server",
+      "title": "Jasa Maintenance Server",
+      "profileTitle": "Perawatan Mini Server",
+      "icon": "shield",
+      "pageTitle": "Jasa Maintenance Server dan Monitoring | Nexlipse",
+      "metaDescription": "Perawatan server berkala: monitoring, pembaruan keamanan, backup terenkripsi, dan laporan berkala. Sistem tetap stabil tanpa ribet.",
+      "h1": "Jasa Maintenance dan Perawatan Server",
+      "lead": "Sistem yang sudah berjalan tetap butuh dijaga: pembaruan, backup, dan pemantauan supaya tidak diam-diam rusak. Paket perawatan membuat semuanya beres secara rutin.",
+      "features": [
+        { "title": "Monitoring stabilitas", "text": "Memori, CPU, disk, dan layanan dipantau supaya masalah ketahuan sebelum fatal." },
+        { "title": "Pembaruan keamanan", "text": "Sistem dan dependensi diperbarui berkala, konfigurasi dirapikan." },
+        { "title": "Backup terenkripsi", "text": "Data dicadangkan rutin dan bisa dipulihkan saat dibutuhkan." },
+        { "title": "Laporan berkala", "text": "Ringkasan kondisi, yang diperbarui, dan rekomendasi dikirim rutin." }
+      ],
+      "process": [
+        { "k": "Audit awal", "v": "Kondisi sistem, backup, dan keamanan dievaluasi dulu." },
+        { "k": "Susun jadwal", "v": "Frekuensi perawatan dan waktu paling aman disepakati bersama." },
+        { "k": "Rawat rutin", "v": "Pembaruan, backup, dan pengecekan dijalankan sesuai jadwal." },
+        { "k": "Laporkan", "v": "Hasil dan rekomendasi disampaikan supaya Anda tahu kondisi sistem." }
+      ],
+      "target": "Untuk pemilik bisnis atau organisasi yang sudah punya sistem jalan dan tidak ingin direpotkan urusan teknis perawatan.",
+      "cta": "Punya sistem yang sudah berjalan? Biar tetap stabil, diskusikan paket perawatannya.",
+      "faq": [
+        { "q": "Berapa biaya maintenance server?", "a": "Tergantung jumlah layanan dan frekuensi perawatan. Diskusikan dulu, nanti dihitungkan skala dan biayanya." },
+        { "q": "Apakah server yang mati bisa ditangani?", "a": "Bisa. Pemulihan dilakukan berdasarkan backup dan dokumentasi, lalu dicegah supaya tidak terulang." },
+        { "q": "Apakah menangani server di luar lokasi?", "a": "Bisa selama perangkat tersambung ke internet, perawatan dilakukan jarak jauh dengan akses yang aman." }
+      ]
+    }
+  ]
+}

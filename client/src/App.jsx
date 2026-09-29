@@ -8,8 +8,11 @@ import Services from './components/Services.jsx';
 import Projects from './components/Projects.jsx';
 import Experience from './components/Experience.jsx';
 import About from './components/About.jsx';
+import Faq from './components/Faq.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
+import ServicePage from './components/ServicePage.jsx';
+import PortfolioPage from './components/PortfolioPage.jsx';
 import { ScrollProgress, CursorGlow, AmbientOrbs, Dust, BackToTop } from './components/Effects.jsx';
 import Admin from './pages/Admin.jsx';
 
@@ -24,8 +27,14 @@ export default function App() {
     }, [loc.pathname]);
 
     useEffect(() => {
-        window.scrollTo({ top: 0 });
-    }, [loc.pathname]);
+        if (!data) return;
+        if (loc.hash) {
+            const id = loc.hash.replace('#', '');
+            setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }), 150);
+        } else {
+            window.scrollTo({ top: 0 });
+        }
+    }, [loc.pathname, loc.hash, data]);
 
     useEffect(() => {
                 const obs = new IntersectionObserver((entries) => {
@@ -58,13 +67,16 @@ export default function App() {
                     <Route path="/" element={
                         <>
                             <Hero profile={data.profile} about={data.about} projects={data.projects} />
-                            <Services profile={data.profile} />
+                            <Services profile={data.profile} pages={data.servicePages?.pages || []} />
                             <Projects projects={data.projects} />
                             <Experience experience={data.experience} />
                             <About profile={data.profile} about={data.about} />
+                            <Faq items={data.faq?.faq} />
                             <Contact profile={data.profile} config={data.contactsConfig} />
                         </>
                     } />
+                    <Route path="/jasa/:slug" element={<ServicePage pages={data.servicePages?.pages || []} profile={data.profile} />} />
+                    <Route path="/portfolio/:id" element={<PortfolioPage projects={data.projects} experience={data.experience} />} />
                     <Route path="/admin" element={<Admin />} />
                     <Route path="*" element={<div style={{ minHeight: '60vh', display: 'grid', placeItems: 'center' }}>
                         <div style={{ textAlign: 'center' }}>

@@ -147,7 +147,7 @@ function JsonEditor({ admin }) {
                 Mode lanjutan untuk pengeditan presisi. Kebanyakan kebutuhan sudah cukup via tab form di atas.
             </p>
             <div style={styles.jsonTabs}>
-                {['profile', 'about', 'projects', 'experience', 'contacts'].map((s) => (
+                {['profile', 'about', 'projects', 'experience', 'contacts', 'service-pages', 'faq'].map((s) => (
                     <button key={s} style={section === s ? styles.jsonTabOn : styles.jsonTab} onClick={() => { setSection(s); }}>{s}</button>
                 ))}
             </div>

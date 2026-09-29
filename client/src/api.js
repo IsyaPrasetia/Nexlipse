@@ -25,8 +25,10 @@ export const api = {
         api.get('/about'),
         api.get('/projects'),
         api.get('/experience'),
-        api.get('/contacts-config')
-    ]).then(([profile, about, projects, experience, contactsConfig]) => ({ profile, about, projects, experience, contactsConfig }))
+        api.get('/contacts-config'),
+        api.get('/service-pages'),
+        api.get('/faq')
+    ]).then(([profile, about, projects, experience, contactsConfig, servicePages, faq]) => ({ profile, about, projects, experience, contactsConfig, servicePages, faq }))
 };
 
 async function aj(token, url, method, body) {

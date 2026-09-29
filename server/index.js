@@ -180,6 +180,8 @@ app.get('/api/contacts-config', (req, res) => {
     const c = readJson(path.join(DATA, 'contacts.json'), { active: true, autoReplyNote: '', processNote: '' });
     res.json({ active: !!c.active, autoReplyNote: c.autoReplyNote || '', processNote: c.processNote || '' });
 });
+app.get('/api/service-pages', (req, res) => res.json(readJson(path.join(DATA, 'service-pages.json'), { pages: [] })));
+app.get('/api/faq', (req, res) => res.json(readJson(path.join(DATA, 'faq.json'), { faq: [] })));
 
 // ================= CONTACT FORM =================
 app.post('/api/contact', rateLimit(10, 60 * 1000, 'Terlalu banyak pesan. Coba lagi beberapa saat.'), async (req, res) => {
@@ -256,7 +258,7 @@ app.post('/api/admin/login', rateLimit(5, 10 * 60 * 1000, 'Terlalu banyak percob
 
 app.get('/api/admin/verify', requireAdmin, (req, res) => res.json({ ok: true }));
 
-const EDITABLE = ['profile', 'about', 'projects', 'experience', 'contacts'];
+const EDITABLE = ['profile', 'about', 'projects', 'experience', 'contacts', 'service-pages', 'faq'];
 app.get('/api/admin/:section', requireAdmin, (req, res) => {
     const s = req.params.section;
     if (!EDITABLE.includes(s)) return res.status(404).json({ error: 'Section tidak dikenal.' });
