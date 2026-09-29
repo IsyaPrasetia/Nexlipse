@@ -381,13 +381,28 @@ button { font-family: inherit; cursor: pointer; }
 .contact-info .mail { display: inline-flex; align-items: center; gap: 10px; padding: 12px 20px; border-radius: 14px; background: var(--card); border: 1px solid var(--card-border); font-weight: 600; color: var(--accent); }
 .field { margin-bottom: 16px; }
 .field label { display: block; font-size: .86rem; font-weight: 600; margin-bottom: 6px; color: var(--text-soft); }
-.field input, .field textarea {
+.field input, .field textarea, .field select {
   width: 100%; padding: 13px 16px; border-radius: 12px; border: 1px solid var(--card-border);
   background: var(--card); color: var(--text); font-family: inherit; font-size: .95rem; transition: .2s;
 }
-.field input:focus, .field textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--glow); }
-.form-notice { font-size: .85rem; color: var(--success); margin-top: 12px; min-height: 22px; }
-.form-err { font-size: .85rem; color: var(--danger); margin-top: 12px; min-height: 22px; }
+.field select { appearance: none; cursor: pointer; padding-right: 40px;
+  background-image: linear-gradient(45deg, transparent 50%, var(--text-mute) 50%), linear-gradient(135deg, var(--text-mute) 50%, transparent 50%);
+  background-position: calc(100% - 20px) 55%, calc(100% - 14px) 55%; background-size: 6px 6px, 6px 6px; background-repeat: no-repeat;
+}
+.field input:focus, .field textarea:focus, .field select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--glow); }
+.radio-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.radio-chip {
+  display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; cursor: pointer;
+  border: 1px solid var(--card-border); border-radius: 999px; background: var(--card);
+  font-size: .88rem; font-weight: 600; color: var(--text-soft); transition: .2s;
+}
+.radio-chip:hover { border-color: var(--accent); }
+.radio-chip.on { border-color: var(--accent); background: var(--glow); color: var(--accent); }
+.radio-chip input { position: absolute; opacity: 0; pointer-events: none; width: 0; height: 0; }
+.form-notice, .form-err { display: none; font-size: .85rem; margin-top: 12px; }
+.form-notice.on, .form-err.on { display: block; }
+.form-notice { color: var(--success); }
+.form-err { color: var(--danger); }
 
 /* ============ FOOTER ============ */
 .footer { border-top: 1px solid var(--card-border); padding: 34px 20px; text-align: center; color: var(--text-mute); font-size: .9rem; background: var(--bg-soft); }

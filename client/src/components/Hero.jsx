@@ -13,15 +13,19 @@ function ShimmerLine({ children }) {
     return <span className="word-shimmer">{children}</span>;
 }
 
-export default function Hero({ profile, about }) {
-    const proyek = useCountUp(11);
-    const runtime = useCountUp(24);
-    const motivasi = useCountUp(365);
+export default function Hero({ profile, about, projects }) {
+    // Angka diambil dari data, bukan di-hardcode, supaya tidak meleset
+    // kalau project bertambah lewat panel admin.
+    const totalProject = Array.isArray(projects) ? projects.length : 0;
+    const totalLayanan = Array.isArray(profile.services) ? profile.services.length : 0;
+    const proyek = useCountUp(totalProject);
+    const layanan = useCountUp(totalLayanan);
+    const uptime = useCountUp(24);
     const cardRef = useRef(null);
     const copyRef = useRef(null);
     useTilt(cardRef, 7);
     useParallax(copyRef, 0.12);
-    const roles = profile.roles && profile.roles.length ? profile.roles : ['Fullstack Developer Enthusiast', 'WA Bot Maker'];
+    const roles = profile.roles && profile.roles.length ? profile.roles : ['Fullstack Developer', 'Bot WhatsApp & Otomasi', 'Mini Server'];
     const typed = useTypewriter(roles);
 
     return (
@@ -42,13 +46,13 @@ export default function Hero({ profile, about }) {
                         {profile.shortBio}
                     </p>
                     <div className="hero-actions reveal-up" style={{ transitionDelay: '360ms' }}>
-                        <Magnetic><a href="#project" className="btn btn-primary">Lihat Project →</a></Magnetic>
-                        <Magnetic><a href="#kontak" className="btn btn-ghost">Mulai Bisnis Anda</a></Magnetic>
+                        <Magnetic><a href="#project" className="btn btn-primary">Lihat Hasil Kerja</a></Magnetic>
+                        <Magnetic><a href="#kontak" className="btn btn-ghost">Konsultasikan Proyek Anda</a></Magnetic>
                     </div>
                     <div className="hero-stats reveal-up" style={{ transitionDelay: '420ms' }}>
-                        <div className="stat"><b>{proyek}+</b><span>Proyek di-Live</span></div>
-                        <div className="stat"><b>{runtime}/7</b><span>Ready in 24 Jam</span></div>
-                        <div className="stat"><b>100%</b><span>Garansi Server Aktif</span></div>
+                        <div className="stat"><b>{proyek}</b><span>Proyek dikerjakan</span></div>
+                        <div className="stat"><b>{layanan}</b><span>Layanan yang bisa dipilih</span></div>
+                        <div className="stat"><b>{uptime}/7</b><span>Server aktif Locate</span></div>
                     </div>
                 </div>
                 <div className="hero-card reveal-card" ref={cardRef}>

@@ -49,7 +49,14 @@ function rateLimit(max, windowMs, message) {
 }
 
 function readJson(file, fallback) {
-    try { return JSON.parse(fs.readFileSync(file, 'utf8')); } catch { return fallback; }
+    try {
+        return JSON.parse(fs.readFileSync(file, 'utf8'));
+    } catch (e) {
+        // Jangan ditelan diam-diam. JSON rusak (mis. koma berlebih) bikin situs
+        // diam-diam pakai nilai default. Log saja supaya mudah ketahuan.
+        if (e.code !== 'ENOENT') console.error(`[data] GAGAL parse ${path.basename(file)}: ${e.message} | pakai fallback`);
+        return fallback;
+    }
 }
 function writeJson(file, data) {
     fs.writeFileSync(file, JSON.stringify(data, null, 2), 'utf8');
@@ -87,21 +94,26 @@ app.get('/api/about', (req, res) => res.json(readJson(path.join(DATA, 'about.jso
 app.get('/api/projects', (req, res) => res.json(readJson(path.join(DATA, 'projects.json'), [])));
 app.get('/api/experience', (req, res) => res.json(readJson(path.join(DATA, 'experience.json'), [])));
 app.get('/api/contacts-config', (req, res) => {
-    const c = readJson(path.join(DATA, 'contacts.json'), { active: true, autoReplyNote: '' });
-    res.json({ active: !!c.active, autoReplyNote: c.autoReplyNote || '' });
+    const c = readJson(path.join(DATA, 'contacts.json'), { active: true, autoReplyNote: '', processNote: '' });
+    res.json({ active: !!c.active, autoReplyNote: c.autoReplyNote || '', processNote: c.processNote || '' });
 });
 
 // ================= CONTACT FORM =================
 app.post('/api/contact', rateLimit(10, 60 * 1000, 'Terlalu banyak pesan. Coba lagi beberapa saat.'), async (req, res) => {
-    const { name, email, message } = req.body || {};
+    const { name, email, message, kebutuhan, budget, deadline, preferensi } = req.body || {};
     if (!name || !message) return res.status(400).json({ error: 'Nama dan pesan wajib diisi.' });
     if (String(message).length > 4000) return res.status(400).json({ error: 'Pesan terlalu panjang.' });
     const emailStr = String(email || '').trim();
-    if (emailStr && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailStr)) return res.status(400).json({ error: 'Format email tidak valid.' });
+    if (!emailStr) return res.status(400).json({ error: 'Email wajib diisi agar kami bisa membalas.' });
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailStr)) return res.status(400).json({ error: 'Format email tidak valid.' });
     const entry = {
         ts: Date.now(),
         name: String(name).slice(0, 120),
         email: emailStr.slice(0, 200),
+        kebutuhan: String(kebutuhan || '').slice(0, 120),
+        budget: String(budget || '').slice(0, 60),
+        deadline: String(deadline || '').slice(0, 120),
+        preferensi: String(preferensi || '').slice(0, 40),
         message: String(message).slice(0, 4000)
     };
     const list = readJson(MSG_FILE, []);

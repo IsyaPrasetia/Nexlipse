@@ -57,7 +57,7 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={
                         <>
-                            <Hero profile={data.profile} about={data.about} />
+                            <Hero profile={data.profile} about={data.about} projects={data.projects} />
                             <Services profile={data.profile} />
                             <Projects projects={data.projects} />
                             <Experience experience={data.experience} />
