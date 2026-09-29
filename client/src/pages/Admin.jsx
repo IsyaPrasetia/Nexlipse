@@ -120,6 +120,7 @@ function JsonEditor({ admin }) {
     useEffect(() => { load(section); }, [section]);
 
     function load(s) {
+        setErr(''); setSaved(''); setDoc(null);
         admin.get(`/admin/${s}`).then((d) => { setDoc(d); setDraft(JSON.stringify(d, null, 2)); }).catch((e) => setErr(e.message));
     }
 

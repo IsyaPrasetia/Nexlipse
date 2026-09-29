@@ -145,9 +145,11 @@ function hashPassword(pw, salt) {
 function getAdminUser() {
     let u = readJson(ADMIN_FILE, null);
     if (!u || !u.salt) {
-        u = { salt: crypto.randomBytes(16).toString('hex'), passHash: null, token: null };
+        u = { salt: crypto.randomBytes(16).toString('hex'), passHash: null, tokens: [] };
         writeJson(ADMIN_FILE, u);
     }
+    // Migrasi model lama (satu token) ke daftar token.
+    if (!Array.isArray(u.tokens)) u.tokens = u.token ? [u.token] : [];
     return u;
 }
 
@@ -155,14 +157,18 @@ const AUTH_TOKENS = new Map();
 
 (() => {
     const u = readJson(ADMIN_FILE, null);
-    if (u && u.token) AUTH_TOKENS.set(u.token, u.token);
+    if (u) {
+        const list = Array.isArray(u.tokens) ? u.tokens : (u.token ? [u.token] : []);
+        for (const t of list) AUTH_TOKENS.set(t, t);
+    }
 })();
 
+// Daftar token yang boleh dipakai bersamaan. Login di tab/perangkat lain tidak
+// lagi menonaktifkan sesi yang sudah aktif, jadi "Unowned" tidak muncul lagi.
 function requireAdmin(req, res, next) {
     const token = (req.headers.authorization || '').replace(/^Bearer\s+/i, '');
-    const u = getAdminUser();
-    if (u.token && AUTH_TOKENS.get(token) === u.token) return next();
-    return res.status(401).json({ error: 'Unowned' });
+    if (token && AUTH_TOKENS.has(token)) return next();
+    return res.status(401).json({ error: 'Sesi berakhir. Silakan masuk lagi.' });
 }
 
 // ================= PUBLIC API =================
@@ -239,10 +245,11 @@ app.post('/api/admin/login', rateLimit(5, 10 * 60 * 1000, 'Terlalu banyak percob
     if (!u.passHash) return res.status(400).json({ error: 'Password admin belum diatur. Set env ADMIN_PASSWORD lalu restart server.' });
     const tried = hashPassword(password || '', u.salt);
     if (tried === u.passHash) {
-        u.token = crypto.randomBytes(24).toString('hex');
+        const tok = crypto.randomBytes(24).toString('hex');
+        u.tokens = (u.tokens || []).concat(tok).slice(-20);
         writeJson(ADMIN_FILE, u);
-        AUTH_TOKENS.set(u.token, u.token);
-        return res.json({ ok: true, token: u.token });
+        AUTH_TOKENS.set(tok, tok);
+        return res.json({ ok: true, token: tok });
     }
     return res.status(401).json({ error: 'Password salah.' });
 });
