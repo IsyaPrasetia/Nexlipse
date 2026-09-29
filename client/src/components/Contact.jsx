@@ -61,7 +61,6 @@ export default function Contact({ profile, config }) {
                             <option>Website landing page / company profile</option>
                             <option>Dashboard atau aplikasi internal</option>
                             <option>Bot WhatsApp otomatis</option>
-                            <option>Setup dan perawatan mini server</option>
                             <option>Belum yakin, butuh konsultasi</option>
                         </select>
                     </div>
