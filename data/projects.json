@@ -191,7 +191,7 @@
     "category": "web",
     "status": "done",
     "year": 2026,
-    "short": "Website resmi Pondok Sehat Indonesia yang dibangun untuk melayani sertifikasi kesehatan dengan tingkat internasional. Cakupannya mulai dari perancangan halaman layanan, alur pendaftaran peserta, sampai backend pengelolaan data peserta dan dokumen. Dikembangkan dengan Laravel dan PHP supaya mudah dirawat maupun dikembangkan kembali.",
+    "short": "Membangun website resmi bertaraf internasional untuk layanan sertifikasi kesehatan.",
     "long": "",
     "tags": [
       "Laravel",
@@ -210,7 +210,7 @@
     "category": "web",
     "status": "done",
     "year": 2026,
-    "short": "Website resmi Arteria Medika Profesional yang dibangun untuk melayani sertifikasi medis di tingkat nasional. Cakupannya mulai dari profil perusahaan, informasi layanan dan persyaratannya, alur pendaftaran peserta, sampai backend pengelolaan data. Dikembangkan dengan Laravel dan PHP dengan tampilan yang rapi dan mudah diakses.",
+    "short": "Membangun website resmi bertaraf nasional untuk layanan sertifikasi medis.",
     "long": "",
     "tags": [
       "Laravel",

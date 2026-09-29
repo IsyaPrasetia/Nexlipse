@@ -8,20 +8,20 @@
     "text": "Membangun ekosistem bot WhatsApp multi-device: AI-CS layanan pelanggan & broadcast grup, AI-ADMIN crawler + laporan AI (Ollama), WA Blast massal, semua dipantau dashboard terpusat 24/7."
   },
   {
-    "id": "item",
+    "id": "pondok-sehat-indonesia",
     "role": "Pengembang Sistem",
     "org": "Pondok Sehat Indonesia",
     "type": "project",
     "period": "2025 - Sekarang",
-    "text": "Pembangunan Web Perusahaan bertaraf international"
+    "text": "Website resmi bertaraf internasional untuk layanan sertifikasi kesehatan. Cakupannya dari perancangan halaman layanan, alur pendaftaran peserta, sampai backend pengelolaan data peserta dan dokumen. Dikembangkan dengan Laravel dan PHP supaya mudah dirawat maupun dikembangkan kembali."
   },
   {
-    "id": "item",
+    "id": "arteria-medika-profesional",
     "role": "Pengembang Sistem",
     "org": "Arteria Medika Profesional",
     "type": "project",
     "period": "2026 - Sekarang",
-    "text": "Pembangunan Web Perusahaan bertaraf Nasional"
+    "text": "Website resmi bertaraf nasional untuk layanan sertifikasi medis. Cakupannya dari profil perusahaan, informasi layanan dan persyaratannya, alur pendaftaran peserta, sampai backend pengelolaan data. Dikembangkan dengan Laravel dan PHP dengan tampilan yang rapi dan mudah diakses."
   },
   {
     "id": "sipandai",
