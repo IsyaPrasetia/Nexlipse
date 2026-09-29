@@ -2,9 +2,11 @@ import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { api } from '../api';
 import { ProfileForm, AboutForm, ProjectsForm, ExperienceForm, ContactsForm } from './AdminForms.jsx';
+import MessagesTab from './AdminMessages.jsx';
 
 const TOKEN_KEY = 'nexlipse-admin-token';
 const TABS = [
+    { key: 'messages', label: 'Pesan' },
     { key: 'profile', label: 'Profil' },
     { key: 'about', label: 'Tentang' },
     { key: 'projects', label: 'Project' },
@@ -19,13 +21,30 @@ export default function Admin() {
     const [pw, setPw] = useState('');
     const [err, setErr] = useState('');
     const [busy, setBusy] = useState(false);
-    const [tab, setTab] = useState('profile');
+    const [tab, setTab] = useState('messages');
+    const [unread, setUnread] = useState(0);
+    const [dataProfile, setDataProfile] = useState(null);
+
+    useEffect(() => {
+        if (!token) return;
+        api.get('/profile').then(setDataProfile).catch(() => {});
+    }, [token]);
 
     const admin = useMemo(() => api.admin(token), [token]);
 
     useEffect(() => {
         if (!token) return;
         admin.get('/admin/verify').catch(() => { setToken(''); try { localStorage.removeItem(TOKEN_KEY); } catch {} });
+    }, [token]);
+
+    // Badge jumlah pesan belum dibaca, diperbarui berkala supaya kelihatan
+    // tanpa harus buka tab Pesan.
+    useEffect(() => {
+        if (!token) return setUnread(0);
+        const tick = () => admin.get('/admin/messages').then((d) => setUnread(d.unread || 0)).catch(() => {});
+        tick();
+        const t = setInterval(tick, 20000);
+        return () => clearInterval(t);
     }, [token]);
 
     const login = async (e) => {
@@ -72,10 +91,14 @@ export default function Admin() {
             </div>
             <div style={styles.tabs}>
                 {TABS.map((t) => (
-                    <button key={t.key} style={tab === t.key ? styles.tabOn : styles.tab} onClick={() => setTab(t.key)}>{t.label}</button>
+                    <button key={t.key} style={tab === t.key ? styles.tabOn : styles.tab} onClick={() => setTab(t.key)}>
+                        {t.label}
+                        {t.key === 'messages' && unread > 0 && <span className="tab-badge">{unread}</span>}
+                    </button>
                 ))}
             </div>
 
+            {tab === 'messages' && <MessagesTab admin={admin} profile={dataProfile} />}
             {tab === 'profile' && <ProfileForm admin={admin} />}
             {tab === 'about' && <AboutForm admin={admin} />}
             {tab === 'projects' && <ProjectsForm admin={admin} />}

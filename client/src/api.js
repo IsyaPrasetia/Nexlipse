@@ -16,6 +16,7 @@ export const api = {
     put: (url, body) => j(url, { method: 'PUT', body: JSON.stringify(body) }),
     admin: (token) => ({
         get: (url) => aj(token, url, 'GET'),
+        post: (url, body) => aj(token, url, 'POST', body),
         put: (url, body) => aj(token, url, 'PUT', body),
         del: (url) => aj(token, url, 'DELETE')
     }),
