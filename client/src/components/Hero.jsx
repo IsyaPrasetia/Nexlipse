@@ -25,7 +25,7 @@ export default function Hero({ profile, about, projects }) {
     const copyRef = useRef(null);
     useTilt(cardRef, 7);
     useParallax(copyRef, 0.12);
-    const roles = profile.roles && profile.roles.length ? profile.roles : ['Fullstack Developer', 'Bot WhatsApp & Otomasi', 'Mini Server'];
+    const roles = profile.roles && profile.roles.length ? profile.roles : ['Fullstack Developer Enthusiast', 'Bot WhatsApp & Otomasi', 'Mini Server'];
     const typed = useTypewriter(roles);
 
     return (
